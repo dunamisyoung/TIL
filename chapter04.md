@@ -1,4 +1,4 @@
-# 🎈4.변수 Part arrangement
+# 🎈 4.변수 Part arrangement
 
 ## 🔎변수
 

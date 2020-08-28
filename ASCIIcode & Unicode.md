@@ -63,10 +63,10 @@ UTF-8은 charset안에 들어가있었는데, 이는 UTF-8이 문자 **인코딩
 🎈 <u>유니코드</u>는 **국제 표준 문자표**를 뜻하고, <u>UTF-8</u>은 **인코딩 방식**을 말하니 꼭 구분지어 기억할수 있도록합시다!
 
 <참조사이트>
-[https://miaow-miaow.tistory.com/37#]: https://miaow-miaow.tistory.com/37#
-[https://ofcourse.kr/html-course/%EC%9D%B8%EC%BD%94%EB%94%A9]: https://ofcourse.kr/html-course/%EC%9D%B8%EC%BD%94%EB%94%A9
-[https://m.blog.naver.com/PostView.nhn?blogId=jamduino&logNo=220833819592&proxyReferer=https:%2F%2Fwww.google.co.kr%2F]: https://m.blog.naver.com/PostView.nhn?blogId=jamduino&logNo=220833819592&proxyReferer=https:%2F%2Fwww.google.co.kr%2F
-[https://medium.com/@jeongdowon/unicode%EC%99%80-utf-8-%EA%B0%84%EB%8B%A8%ED%9E%88-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-b6aa3f7edf96]: https://medium.com/@jeongdowon/unicode%EC%99%80-utf-8-%EA%B0%84%EB%8B%A8%ED%9E%88-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-b6aa3f7edf96
+[https://miaow-miaow.tistory.com/37#]: https://miaow-miaow.tistory.com/37#  
+[https://ofcourse.kr/html-course/%EC%9D%B8%EC%BD%94%EB%94%A9]: https://ofcourse.kr/html-course/%EC%9D%B8%EC%BD%94%EB%94%A9  
+[https://m.blog.naver.com/PostView.nhn?blogId=jamduino&logNo=220833819592&proxyReferer=https:%2F%2Fwww.google.co.kr%2F]: https://m.blog.naver.com/PostView.nhn?blogId=jamduino&logNo=220833819592&proxyReferer=https:%2F%2Fwww.google.co.kr%2F  
+[https://medium.com/@jeongdowon/unicode%EC%99%80-utf-8-%EA%B0%84%EB%8B%A8%ED%9E%88-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-b6aa3f7edf96]: https://medium.com/@jeongdowon/unicode%EC%99%80-utf-8-%EA%B0%84%EB%8B%A8%ED%9E%88-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-b6aa3f7edf96  
 [https://ko.wikipedia.org/wiki/ASCII]: https://ko.wikipedia.org/wiki/ASCII
 
 [https://ko.wikipedia.org/wiki/%ec%9c%a0%eb%8b%88%ec%bd%94%eb%93%9c]: https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C

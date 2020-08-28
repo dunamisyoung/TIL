@@ -62,15 +62,15 @@ UTF-8은 charset안에 들어가있었는데, 이는 UTF-8이 문자 **인코딩
 
 🎈 <u>유니코드</u>는 **국제 표준 문자표**를 뜻하고, <u>UTF-8</u>은 **인코딩 방식**을 말하니 꼭 구분지어 기억할수 있도록합시다!
 
-<참조사이트>
+<참조사이트>  
+[https://m.blog.naver.com/PostView.nhn?blogId=jamduino&logNo=220833819592&proxyReferer=https:%2F%2Fwww.google.co.kr%2F]: 아스키 코드란?
 
-[https://m.blog.naver.com/postview.nhn?blogid=jamduino&logno=220833819592&proxyreferer=https:%2f%2fwww.google.co.kr%2f]: 아스키코드란?
-[https://miaow-miaow.tistory.com/37#]: 유니코드란? '문자세트, 인코딩, 코드포인트, 평면, 정규화'
+[https://ofcourse.kr/html-course/%EC%9D%B8%EC%BD%94%EB%94%A9]: 한글깨짐현상과 인코딩
 
-[https://ofcourse.kr/html-course/%EC%9D%B8%EC%BD%94%EB%94%A9]: 인코딩에 관하여
+[https://miaow-miaow.tistory.com/37#]: 유니코드란?
 
-[https://medium.com/@jeongdowon/unicode%EC%99%80-utf-8-%EA%B0%84%EB%8B%A8%ED%9E%88-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-b6aa3f7edf96]: 유니코드와 아스키코드 간단히 이해하기
+[https://medium.com/@jeongdowon/unicode%EC%99%80-utf-8-%EA%B0%84%EB%8B%A8%ED%9E%88-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-b6aa3f7edf96]: 아스키코드와 유니코드 간단히 이해하기
 
-[https://ko.wikipedia.org/wiki/ASCII]: 위키백과 아스키코드
+[https://ko.wikipedia.org/wiki/ASCII]: 아스키코드 위키백과
 
-[https://ko.wikipedia.org/wiki/%ec%9c%a0%eb%8b%88%ec%bd%94%eb%93%9c]: 위키백과 유니코드
+[https://ko.wikipedia.org/wiki/%ec%9c%a0%eb%8b%88%ec%bd%94%eb%93%9c]: 유니코드 위키백과

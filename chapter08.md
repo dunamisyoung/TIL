@@ -243,7 +243,8 @@ tangerine: {
 
 ## 💻countinue 문
 
-- 반복문의 코드실행을 중단하고 증감식으로 실행 흐름을 바꾼다.
+반복문의 **코드실행을 중단하고 증감식으로 실행 흐름을 바꾼다.**
+break문처럼 반복문 자체를 탈출하는것은 아니다.
 
 ```javascript
 var string = 'fastcampus';

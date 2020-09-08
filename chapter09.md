@@ -72,9 +72,124 @@ console.log(typeof score);
 `우리팀의 점수는 ${90 + 7} 점이다.`; //우리팀의 점수는 97점이다.
 ```
 
+아래의 예시들로 문자열 타입의 암묵적 타입변환을 살펴보자.
+
+```javascript
+// 숫자타입
+0 + ''; // '0'
+-0 + ''; // '0'
+1 + '' // '1'
+-1 + '' // '-1'
+NaN + '' // 'NaN'
+Infinity + ''//'Infinity'
+-Infinity + ''//'-Infinity'
+
+// 불리언 타입
+true + '' // "true"
+false + '' // "false"
+
+// null 타입
+null + '' // "null"
+
+//undefined + '' // "undefined"
+
+({}) + '' // '[object Object]'
+Math + '' // "[object Math]"
+[] + ''; // ''
+[10, 20] + ''; // '10,20';
+(function () {} + ''); // "function(){}"
+Array + ''; // "function Array(){[native code]}"
+```
+
 ### 🧮 숫자 타입으로 변환
 
+```javascript
+10 - '1'; // 9
+10 * '1'; // 10
+10 / 'one'; // NaN
+```
+
+위 예제에서 사용한 연산자는 모두 산술연산자이다.
+**산술연산자의 피연산자에는 코드 문맥상 숫자값이 위치해야한다.**
+
+자바스크립트엔진에 의해 **피연산자의 표현식의 값이 타입이 숫자값이 아닌경우 암묵적으로 숫자타입으로 변환**시킨다.
+만약, **피연산자를 숫자타입으로 변환할수 없는경우에는 NaN을 출력**하게된다.
+
+```javascript
+'1' > 0; // true
+```
+
+비교 연산자의 역할은 불리언 값을 만드는 것이다.
+`>` 비교연산자는 피연산자의 크기를 비교함으로 **피연산자의 타입값을 숫자 값으로 암묵적 변환하여서 출력한다.**
+
+자바스크립트 엔진에 의해 숫자타입으로 값을 변환한다는것은 **`+`단항 연산자는 숫자 타입의 값이 아니면 숫자 타입의 값으로 암묵적 타입 변환을 수행**한다고 할수있다. 아래의 예시를 보자.
+
+```javascript
+// 문자열 타입
++''; //0
++'0'; //0
++'10'; //10
++'string'; //NaN
+
+//boolean타입
++true; //1
++false; //0
+
+//undefined타입
++undefined; // NaN
+
+//심벌 타입
++Symbol(); // ypeError : Cannot convert a Symbol value to a number
+
+//객체 타입
++{}; //NaN
++[]; //0
++[10, 20]; //NaN
++function () {}; //NaN
+```
+
 ### 🔐 불리언 타입으로 변환
+
+다음 예제를 살펴보자.
+
+```javascript
+//'' 빈문자열은 false로 평가되어 어느것도 반환하지 않는다.
+if ('') console.log(x);
+```
+
+if문이나 for문과 같은 **제어문 또는 삼항 조건연산자에서의 조건식은 불리언값으로 평가되어야하는 표현식**이다. 그렇기에 자바스크립트 엔진은 **불리언 타입으로 암묵적인 타입변환**을 한다.
+
+```javascript
+if ('') console.log('1'); //빈문자열은 false로 평가된다.
+if (true) console.log('2');
+if (0) console.log('3'); // 숫자값 0도 false로 평가된다.
+if ('str') console.log('4'); //빈문자열이 아닌 문자열은 true로 평가된다.
+if (null) console.log('5'); //null도 false로 평가된다.
+
+// 2 4
+```
+
+자바스크립트 엔진은 불리언 타입이 아닌 값을 **Truthy 값(참으로평가되는 값)** 또는 **Falsy값(거짓으로 평가되는 값)으로 구분**한다. 즉, 제어문의 조건식에서의 평가결과를 `Truthy = true` , `Falsy = false`로 평가한다.
+
+아래의 값들은 자바스크립트 엔진에 의해서 `false`로 평가되는값이다.
+
+- false;
+- undefined;
+- null;
+- 0, -0;
+- NaN;
+- '';
+
+<u>이것들을 제외한 모든 값</u>은 **true로 평가되는 Truthy 값이다.**
+
+```javascript
+if (!false) console.log(false + 'is falsy value');
+if (!undefined) console.log(undefined + 'is falsy value');
+if (!null) console.log(null + 'is falsy value');
+if (!0) console.log(0 + 'is falsy value');
+if (!NaN) console.log(NaN + 'is falsy value');
+if (!'') console.log('' + 'is falsy value');
+```
 
 ## 👓 명시적 타입변환
 

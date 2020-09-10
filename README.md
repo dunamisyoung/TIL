@@ -15,3 +15,5 @@ Today I Learn
 # 🎈8. 제어문 part arrangement
 
 # 🎈9. 타입 변환과 단축 평가 part arrangement
+
+# 🎈13. 스코프 part arrangement

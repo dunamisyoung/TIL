@@ -148,21 +148,75 @@ let 키워드는 var 키워드의 단점을 보안하기 위해서 ES6에서 만
   let today = 'tangerine'; // 전역 변수
 
   {
-    console.log(today); //  ReferenceError: Cannot access 'today' before initialization => 이미 today 라는 변수가 선언되었고 그값에 접근할수 없다.
+    console.log(today); //  ReferenceError: Cannot access 'today' before initialization
     let today = 'peanut'; // 지역 변수
   }
   ```
 
+  let키워드로 선언한 변수의 경우 변수 호이스팅이 발생하지 않는다면 전역 변수 today의 값을 참조해야 하지만 호이스팅이 발생하기 때문에 참조 에러가 발생한다.
+
 - ### 📜전역 객체와 let
+
+  var 키워드로 선언한 전역변수와 전역 함수, 그리고 암묵적 전역은 전역객체 window의 프로퍼티가 된다.
+
+  ```javascript
+  var tangerine = 'peanut';
+
+  month = 'september';
+
+  function learn() {}
+
+  console.log(window.tangerine); // peanut
+  console.log(tangerine); // peanut
+
+  console.log(window.month); // september
+  console.log(month); // september
+
+  console.log(window.learn); // f learn() {}
+  console.log(learn); // f learn() {}
+  ```
+
+  **let 키워드로 선언한 전역 변수는 전역객체의 프로퍼티가 아니다.**
+
+  ```javascript
+  let year = '2020';
+
+  console.log(window.year); // undefined
+  console.log(year); // 2020
+  ```
 
 ## 🔒const 키워드
 
+const키워드는 상수(constant)를 선언하기 위해 사용한다. 하지만 반드시 상수만을 위해 사용하지는 않는다.일단 이번에는 let키워드와 비교하면서 살펴보자.
+
 - ### 🎰 선언과 초기화
+
+  **const키워드로 선언한 변수는 반드시 선언과 동시에 초기화해야 한다.**
+
+  ```javascript
+  {
+    console.log(num);// ReferenceError : cannot access 'num' before initialization
+    const num = 100;
+    console.log(num);//100
+  }
+  const score;// SyntaxError : Missing intializer in const declaration
+
+  console.log(num); // ReferenceError : num is not defined
+  ```
+
+  const 키워드로 선언한 변수는 let 키워드로 선언한 변수와 마찬가지로 블록 레벨 스코프를 가지며, 변수 호이스팅이 발생하지 않는것 처럼 동작한다.
 
 - ### 🧩 재할당 금지
 
-- ### 🔐 상수
+  var,let키워드로 선언한 변수는 재할당이 자유롭지만 const키워드로 선언한 변수는 재할당이 금지된다.
 
+  ```javascript
+  const num = 100;
+  num = 200; // TypeError : Assignment to constant variable
+  ```
+
+- ### 🔐 상수
+  const키워드롤 선언한 변수에 원시값을 할당한 경우 변수 값을 변경할수 없다.
 - ### 📌 const 키워드와 객체
 
 ## 📍 var vs. let vs. const

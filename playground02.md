@@ -242,10 +242,10 @@ var q = '';
 
 for (var i = 0; i < outLine; i++) {
   for (var j = 0; j < inLine; j++) {
-    x = x + '_';
+    x = x + '*';
   }
   y = y + ' ';
-  z = z + x + '_';
+  z = z + x + '*';
   q = q + x + z + '\n' + y;
   inLine--;
   x = '';

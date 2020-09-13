@@ -128,8 +128,4 @@ console.log(x); // RefernceError : x is not defined
 
 - ### 🔐 모듈 패턴
 
-  ```javascript
-
-  ```
-
 - ### 📌 ES6 모듈

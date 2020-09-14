@@ -199,6 +199,8 @@ delete myPhone.price; // 존재하지 않는 프로퍼티 키를 삭제 -> 오�
 console.log(myPhone.manuFacturer); // {manuFacturer: 'samsung'}
 ```
 
+하지만 delete 연산자를 사용하는 것은 다시한번 생각해볼 필요가있다. 프로퍼티를 삭제한다는것은 의미없는 프로퍼티를 만들었다. 라고 생각할수 있기에 신중하게 사용하고 만들도록하자.
+
 ## 🧱 ES6에서 추가된 객체 리터럴의 확장기능
 
 - ### 📌 프로퍼티 축약 표현

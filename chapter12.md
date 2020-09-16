@@ -369,5 +369,27 @@ var move = function add(x, y) {
 
 - ### 중첩 함수
 
+  ```javascript
+  function outside() {
+    var x = 1;
+
+    // 중첩 함수
+    function inside() {
+      var y = 2;
+
+      console.log(x + y);
+    }
+
+    inside();
+  }
+
+  outside();
+  ```
+
+  **함수내부에서 정의된 함수를 중첩 함수라고 부른다.**s
+  중첩함수는 일반적으로 외부함수를 도와서 코드를 구현하는 헬퍼함수의 역할을한다.
+
+  함수는 문이 위치할수있는곳에서 모두 사용할수있다.
+
 - ### 콜백 함수
 - ### 순수 함수와 비순수 함수

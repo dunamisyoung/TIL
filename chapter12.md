@@ -137,6 +137,46 @@ var move = function add(x, y) {
 
 - ### 함수 생성 시점과 함수 호이스팅
 
+  위 선언문 마지막에 잠깐 설명했지만,
+  함수 선언문은 함수 선언문 이전에 함수를 참조할수도 있고 호출할수도있다.
+  함수 표현식은 함수 표현식 이전에 참조가 가능하지만 undefined값을 출력한다.
+
+  함수 표현식인 경우에는 함수 호이스팅이 발생하지 않고 변수 호이스팅이 발생한다.
+
+  함수 선언문은 런타임 이전에 자바스크립트 엔진이 실행한다.
+  함수 선언문은 함수 호이스팅이 발생하지만 , 함수 표현식은 변수 호이스팅이 발생한다.
+
+  ```javascript
+  // 함수 참조
+  console.log(add); // f add(x,y)
+  console.log(sub); // undefined
+
+  // 함수 호출
+  console.log(add(2, 5)); // 7
+  console.log(sub(2, 5)); // TypeError: sub is not a function
+
+  // 함수 선언문
+  function add(x, y) {
+    return x + y;
+  }
+
+  //함수 표현식
+  var sub = function (x, y) {
+    return x - y;
+  };
+
+  /* 
+  두줄짜리 함수 표현식
+  var sub ; 
+  
+  sub = function (x,y){
+    return x - y;
+  }
+  */
+  ```
+
+  함수 표현식은 변수 선언문과 변수 할당문으로 이루어져있다.
+
 - ### Function 생성자 함수
 - ### 화살표 함수
 

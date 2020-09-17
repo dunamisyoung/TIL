@@ -15,6 +15,10 @@
 ```javascript
 function linearSearch(array, target) {
   // 코드 구현
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] === target) return i;
+  }
+  return -1;
 }
 
 console.log(linearSearch([1, 2, 3, 4, 5, 6], 1)); // 0

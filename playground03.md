@@ -78,7 +78,21 @@ console.log(binarySearch([1, 2, 3, 4, 5, 6], 7)); // -1
 
 ```javascript
 function binarySearch(array, target) {
-  // 코드 구현
+  //코드 구현
+  var start = 0;
+  var end = array.length - 1;
+
+  while (start <= end) {
+    var mid = Math.floor((start + end) / 2);
+    if (target === array[mid]) {
+      return mid;
+    } else if (target > array[mid]) {
+      start = mid + 1;
+    } else {
+      end = mid - 1;
+    }
+  }
+  return -1;
 }
 
 console.log(binarySearch([1, 2, 3, 4, 5, 6], 1)); // 0

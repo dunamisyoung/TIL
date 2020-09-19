@@ -214,10 +214,116 @@ console.log(person); // {firstName : 'tangerine' lastName : 'Peanut'}
 
 ## 🔒 객체 변경 방지
 
+객체는 변경 가능한 값이므로 재할당이 아닌 직접변경이 가능하다. 즉, 프로퍼티의 추가, 삭제, 갱신이 가능하며 **Object.defineProperty** 또는 **Object.defineProperties** 메서드를 이용해 프로퍼티 어트리뷰트를 재정의도 가능하다.
+
+자바스크립트는 객체의 변경을 방지하는 다양한 메서드들을 제공하는데 각각의 객체변경 메서드 들은 금지 강도가 다르다.
+
+| 구분           | 메서드                   | 프로퍼티 추가 | 프로퍼티 삭제 | 프로퍼티값 읽기 | 프로퍼티 값 쓰기 | 프로퍼티 어트리 뷰트 재정의 |
+| -------------- | ------------------------ | ------------- | :-----------: | :-------------: | :--------------: | :-------------------------: |
+| 객체 확장 금지 | Object.preventExtensions | X             |       O       |        O        |        O         |              O              |
+| 객체 밀봉      | Object.seal              | X             |       X       |        O        |        O         |              X              |
+| 객체 동결      | Object.freeze            | X             |       X       |        O        |        X         |              X              |
+
 - ### 🚧객체 확장 금지
+
+**Object.preventExtensions** 메서드는 객체의 확장을 금지한다.
+객체의 확장금지는 프로퍼티 추가 금지를 의미한다. 즉, **확장이 금지된 객체는 프로퍼티 추가가 금지되며, 프로퍼티 동적추가와 Object.definedProperty 메서드로도 추가 할수없다.**
+
+```javascript
+const person = { name: 'Deo' };
+
+console.log(Object.isExtensible(Person)); // true
+
+Object.isExtensions(Person); // true
+
+console.log(Object.isExtensible(Person)); // false
+
+// 프로퍼티 동적 추가가 금지된다.
+person.age = 20;
+console.log(person); // {name : 'Deo'}
+
+// 프로퍼티 삭제는 가능하다.
+delete person.name;
+console.log(person); // {}
+
+// 프로퍼티 정의에 의한 추가도 금지된다.
+Object.definedProperty(person, 'age', { value: 20 });
+```
 
 - ### 📦객체 밀봉
 
+**Object.seal** 메서드는 객체를 밀봉한다.
+객체 밀봉이란 **프로퍼티 추가 및 삭제와 프로퍼티 어트리뷰트 재정의 금지를 의미한다.**
+**밀봉된 객체는 읽기와 쓰기만 가능하다.**
+
+```javascript
+const person = { name: 'Deo' };
+
+console.log(Object.isSealed(person)); // false
+
+Object.seal(person);
+
+console.log(Object.isSealed(person)); // true
+
+console.log(Object.getOwnPropertyDescriptor(person));
+// name : {value : 'Deo' , writable: true, enumerable : true, configurable : false}
+
+person.name = 'Peanut';
+console.log(person); // {name : 'kim'}
+```
+
+밀봉된 객체는 configurable 이 false로 변하며 프로퍼티 추가 ,삭제, 재정의가 금지된다.
+프로퍼티 값의 갱신은 가능하다.
+
 - ### ❄객체 동결
 
+**Object.freeze** 메서드는 객체를 동결한다. 객체 동결(freeze)이란 프로퍼티 추가 및 삭제 어트리뷰트 재정의 금지, 프로퍼티 값 갱신금지를 의미한다. **즉, 동결된 객체는 읽기만 가능하다.**
+
+동결된 객체인지 여부는 Object.isFrozen 메서드로 확인 할 수있다.
+
+```javascript
+const person = { name: 'Deo' };
+
+console.log(Object.isFrozen(person)); // false
+
+Object.freeze(person);
+
+console.log(Object.isFrozen(person)); // true
+
+console.log(Object.getOwnPropertyDescriptor(person));
+// name : {value : 'Deo' , writable: false, enumerable : true, configurable : false}
+```
+
+동결된 객체는 writable과 configurable이 false로 변하며, 프로퍼티 추가, 삭제, 갱신, 어트피뷰트 재정의가 금지된다.
+
 - ### 💎불변 객체
+
+위에서본 객체확장금지(Object.preventExtenstions),객체밀봉(Object.seal), 객체동결(Object.freeze) 메서드는 얕은 변경 방지로 직속 프로퍼티만 변경이 방지되고 중첩객체까지는 영항을 주지못한다.
+
+**객체의 중첩객체까지 동결하여 변경이 불가능한 읽기전용 불변객체를 만들려면 객체를 가지는 모든 프로퍼티에 대해 재귀적으로 Object.freeze 매서드를 호출해야된다.**
+
+```javascript
+function deepFreeze(target) {
+  // 객체가 아니거나 동결된 객체는 무시하고 객체이고 동결되지 않은 객체만 동결한다.
+  if (target && typeof target === 'object' && !Object.isFrozen(target)) {
+    Object.freeze(target);
+
+    Object.keys(target).forEach((key) => deepFreeze(target[key]));
+  }
+  return target;
+}
+
+const person = {
+  name: 'Deo',
+  address: { city: 'Guri' },
+};
+
+deepFreeze(person);
+
+console.log(Object.isFrozen(person));
+
+console.log(Object.isFrozen(person.address));
+
+person.address.city = 'Seoul';
+console.log(person); // {name : 'Deo', address: {city : 'Guri'}}
+```

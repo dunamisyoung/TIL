@@ -50,14 +50,40 @@ const person = {
 
 person.age = 20;
 
-console.log(Object.getOwnPropertyDescriptor(person, 'name'));
+console.log(Object.getOwnPropertyDescriptors(person));
 //age: {value: 20, writable: true, enumerable: true, configurable: true}
 //name: {value: "Lee", writable: true, enumerable: true, configurable: true}
 ```
 
 ## ⛓ 데이터 프로퍼티와 접근자 프로퍼티
 
+프로퍼티는 구분하자면 **데이터 프로퍼티**와 **접근자 프로퍼티**로 나눌수있다.
+
 - ### 🧬 데이터 프로퍼티
+
+  - 키와 값으로 구성된 일반적인 프로퍼티이다.
+
+  - 데이터 프로퍼티는 어트리뷰트를 가진다. 이는 자바스크립트 엔진이 프로퍼티를 생성할때 기본값으로 자동 정의된다.
+
+| 프로퍼티 어트리뷰트 | 프로퍼티 디스크립터 객체의 프로퍼티 | 설명                                                                                                                                                                                                                                               |
+| ------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `[[Value]]`         | value                               | 프로퍼티 키를 통해 값에 접근하면 반환되는 값입니다.프로퍼티키를 통해 재할당이 이루어진 값을 `[[Value]]`에 재할당 한다. 프로퍼티값이 없으면 프로퍼티를 동적 생성하고 `[[Value]]`에 값을 저장한다.                                                   |
+| `[[Writable]]`      | writable                            | 프로퍼티 **값의 변경 여부**를 나타내며 불리언 값을 가집니다. false일때 프로퍼티 `[[Value]]`값이 읽기전용이됩니다.                                                                                                                                  |
+| `[[Enumerable]]`    | enumerable                          | 프로퍼티의 **열거 가능여부**를 나타내며 불리언 값을 가집니다. false이면 for....in문 같은 메서드로 열거할 수 없다.                                                                                                                                  |
+| `[[configurable]]`  | configurable                        | 프로퍼티의 **재정의 가능 여부**를 나타내며 불리언 값을 가집니다. false 이면 프로퍼티 삭제, 어트리뷰트 값의 변경이 금지 되며, `[[Writable]]` 의 값이 true인 경우에는 `[[Value]]` 의 변경과 `[[Writable]]` 에 한해서 false로 변하는 것은 허용됩니다. |
+
+```javascript
+const person = {
+  name: 'Lee',
+};
+
+person.age = 20;
+
+console.log(Object.getOwnPropertyDescriptor(person, 'name'));
+//age: {value: 20, writable: true, enumerable: true, configurable: true}
+```
+
+프로퍼티 생성시 `[[Value]]`의 값은 프로퍼티 값으로 초기화 되며 `[[Writable]]`, `[[Enumerable]]`,`[[Configurable]]`의 값은 true로 초기화된다. 프로퍼티 동적추가시에도 동일하다.
 
 - ### 🔬 접근자 프로퍼티
 

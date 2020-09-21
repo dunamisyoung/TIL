@@ -184,4 +184,34 @@ console.log(peanut.name); // peanut
 
 - ### 🔬 **proto** 접근자 프로퍼티
 
+모든객체는 `[[Prototype]]` 이라는 내부슬롯을 가지는데 `[[Prototype]]`은 프로토 타입 객체를 가리킨다.
+
+`__proto__`프로퍼티는 `[[Prototype]]` 내부슬롯이 가리키는 프로토 타입에 접근하게끔 해주는 접근자 프로퍼티다. **내부슬롯에는 직접접근 할 수 없는데 `__proto__` 접근자 프로퍼티를 통해 간접 접근하게끔 도와준다.**
+
+```javascript
+const tangerine = { age: 20 };
+// 객체 리터럴 방식으로 생성한 객체의 프로토 타입 객체는 Object.prototype 이다.
+
+console.log(tangerine.__proto__ === Objecy.prototype); // true
+
+console.log(obj.hasOwnProperty('peanut')); // true
+console.log(obj.hasOwnProperty('__proto__')); // false
+```
+
+**hasOwnProperty 메서드**
+hasOwnProperty는 Object.prototype의 메서드 이고 인수로 전달받은 프로퍼티 키가 객체 고유의 프로퍼티인 경우에만 true를 반환한다. 즉, 상속받은 프로토타입의 프로퍼티는 false를 반환한다.
+
 - ### 🧬 prototype 프로퍼티
+
+prototype 프로퍼티는 생성자 함수로 호출할수 있는 객체 constructor만이 소유하는 프로퍼티이다.
+
+```javascript
+(function () {}.hasOwnProperty('prototype'); // true
+
+({}).hasOwnProperty('prototype'); // false
+```
+
+함수 객체는 prototype 프로퍼티를 소유한다.
+일반 객체는 prototype 프로퍼티를 소유하지 않는다.
+
+또한 prototype 프로퍼티는 함수가 객체를 생성하는 생성자 함수로 호출될 때 함수가 생성할 인스턴스의 프로토타입 객체를 가르킨다.

@@ -125,9 +125,62 @@ arguments는 유사 배열 객체로 배열 형태로 인자 정보를 담고 �
 
 - ### 📞 caller 프로퍼티
 
+caller 프로퍼티는 ECMAScript 사양에 포함되지 않은 비표준 프로퍼티이다.
+또한 표준화될 예정도 없는 프로퍼티이다. 참고용으로만 알아두도록하자.
+
+```javascript
+function foo(func) {
+  return func();
+}
+
+function bar() {
+  return 'caller : ' + bar.caller;
+}
+
+// 브라우저에서의 실행한 결과
+console.log(foo(bar)); // caller : function foo(func) {...}
+console.log(bar()); // caller : null
+```
+
+함수 호출 foo(bar)의 경우 bar 함수를 foo 함수 내에서 호출했다.
+이때 bar 함수의 caller 프로퍼티는 bar 함수를 호출한 foo 함수를 가르킨다. 함수 호출 bar()의 함수를 호출한 함수는 없다. 따라서 caller 프로퍼티는 null을 가르킨다.
+
 - ### 📏 length 프로퍼티
 
+함수 객체의 length 프로퍼티는 **함수를 정의할때 선언한 매개 변수의 개수를 가리킨다.**
+
+```javascript
+function tangetine() {}
+console.log(tangerine.length); //0
+
+function peanut(x) {
+  return x;
+}
+
+console.log(peanut.length); //1
+```
+
+arguments 객체의 length 프로퍼티와 함수 객체의 length 프로퍼티 값은 다를 수 있으므로 주의 해야한다.
+
+argumnets 객체의 legnth프로퍼티는 인자(argument)를 가르키고
+함수객체의 length프로퍼티는 매개변수(parameter)의 개수를 가르킨다.
+
 - ### 📌 name 프로퍼티
+
+함수 객체의 name 프로퍼티는 함수이름을 나타낸다.
+
+name 프로퍼티는 ES5 에서는 빈문자열을 값으로 가지고, ES6에서는 함수 객체를 가리키는 식별자를 값으로 가진다.
+
+```javascript
+var tangerine = function peanut() {};
+console.log(tangerine.name); // peanut
+
+var tangerine = function () {};
+console.log(tangerine.name); // ES5 : ''  , ES6 tnagerine
+
+function peanut() {}
+console.log(peanut.name); // peanut
+```
 
 - ### 🔬 **proto** 접근자 프로퍼티
 

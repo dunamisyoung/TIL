@@ -130,8 +130,104 @@ getArea 메서드는 단 하나만 생성되어 프로토타입인 Circle.protot
 
 ## 🎨 프로토타입 객체
 
+프로토타입 객체란 프로그래밍의 근간을 이루는 상속(inheritance)을 구현하기 위해 사용된다.
+프로토타입은 어떤 객체의 부모역할을 하는 객체로서 다른 객체에 공유 프로퍼티(메서드 포함)를 제공한다.
+
+**자식객체는 부모객체의 프로퍼티를 자신의 프로퍼티처럼 자유롭게 사용할 수 있다.**
+
+**모든 객체는 `[[Prototype]]`이라는 내부슬롯을 가지며 이 내부 슬롯의 값은 프로토타입의 참조이다.**(null 인경우도 있다.)
+`[[Prototype]]`에 저장되는 프로토타입은 객체 생성방식에 의해 결정된다.
+
+예를 들어, 객체 리터럴에 의해 생성된 객체의 프로토타입은 Object.prototype 이고 생성자 함수에 의해 생성된 객체의 프로토타입은 생성자 함수의 prototype 프로퍼티에 바인딩되어있는 객체다.
+
+**모든 객체는 하나의 프로토타입을 가지며. 모든 프로토타입은 생성자 함수와 연결되어있다.**
+
+`[[Prototype]]` 내부 슬롯에는 직접 접근할 수 없지만, 위 그림처럼 `__proto__` 접근자 프로퍼티를 통해 자신의 `[[Prototype]]` 내부 슬롯이 가리키는 프로토타입에 간접적으로 접근할 수 있다.
+프로토타입은 자신의 constructor 프로퍼티를 통해 생성자 함수에 접근할 수 있고, 생성자 함수는 자신의 prototype 프로퍼티를 통해 프로토타입에 접근할 수있다.
+
 - ### `__proto__` 접근자 프로퍼티
-- ### 함수 객체의 prototype 프로포터티
+
+**모든 객체는 `__proto__` 접근자 프로퍼티를 통해 자신의 프로토타입, 즉`[[Prototype]]` 내부 슬롯에 간접적으로 접근할 수 있다.**
+
+모든 객체는 `__proto__` 접근자 프로퍼티를 통해 프로토타입을 가리키는 `[[Prototye]]` 내부 슬롯에 접근할 수 있다.
+
+👞 **`__proto__`는 접근자 프로퍼티이다.**
+
+**내부슬롯은 프로퍼티가 아니며, 내부슬롯의 값인 프로토타입에 간접적으로 접근할수 있게 해주는 Object.prototype의 접근자 프로퍼티인 `__proto__`를 사용한다.**
+
+이처럼 `__proto__`를 통해 내부슬롯에 **접근하면 내부적으로 `__proto__`의 getter함수인 `get : __proto__()` 가 호출**되고 `__proto__`를 통해 새로운 프로토타입을 **할당하게되면 `__proto__`의 setter 함수인 `set : __proto__()` 가 호출**된다.
+
+👟 **`__proto__` 접근자 프로퍼티는 상속을 통해 사용된다.**
+
+`__proto__` 접근자 프로퍼티는 객체가 직접 소유하는 프로퍼티가 아닌 Object.prototype의 프로퍼티다. 모든 객체는 상속을 통해 `Object.prototype.__proto__` 접근자 프로퍼티를 사용할 수 있다.
+
+```javascript
+const person = { name: 'Lee' };
+
+// person 객체는 __proto__ 프로퍼티를 소유하지 않는다.
+console.log(person.hasOwnProperty('__proto__')); // false
+
+// __proto__ 프로퍼티는 모든 객체의 프로토타입 객체인 Object.prototype의 접근자 프로퍼티다.
+console.log(Object.getOwnPropertyDescriptor(Object.prototype, '__proto__'));
+// {get: f, set: f, enumerable : false, configurable: true}
+
+// 모든 객체는 Object.prototype의 접근자 프로퍼티 __proto__를 상속받아 사용 할 수 이싿.
+console.log({}.__proto__ === Object.prototype); // true
+```
+
+**Object.prototype가 가지고 있는 프로퍼티와 메서드는 모든 객체에게 상속되며, Object.prototype는 프로토타입 체인 최상위에 위치한다.**
+
+🥾 **`__proto__` 접근자 프로퍼티를 통해 프로토타입에 접근하는 이유**
+
+`[[Prototype]]` 내부 슬롯의 값, 즉 프로토타입에 접근하기 위해 접근자 프로퍼티를 사용하는 이유는 상호참조에 의해 프로토타입 체인이 생성되는 것을 방지하기 위해서다.
+
+```javascript
+const parent = {};
+const child = {};
+
+// child의 프로토타입을 parent로 설정
+child.__proto__ = parent;
+// parent의 프로토타입을 child로 설정
+prrent.__proto__ = child; // TypeError : Cyclic __proto__ value
+```
+
+위 예제에서는 parent 객체를 child 객체의 프로토타입으로 설정한후, child 객체를 parent 객체의 프로토타입으로 설정했다. 이러한 코드가 에러를 발생하지 않으면 서로가 자신의 프로토타입이 되는 비정상적 프로토타입 체인이 만들어지기에 `__proto__`접근자 프로퍼티는 에러를 발생시킨다.
+
+만약 그러한 순환 참조하는 프로토타입 체인이 만들어지면 프로토타입 체인에서 프로퍼티 검색시 무한루프에 빠진다. 따라서 아무런 체크없이 무조건적으로 프로토타입을 교체할 수 없도록 `__proto__` 접근자 프로퍼티를 통해 프로토타입에 접근하고 교체하도록 구현되어 있다.
+
+🥿 **`__proto__` 접근자 프로퍼티를 코드 내에서 직접 사용하는 것은 권장하지 않는다.**
+
+모든 객체가 `__proto__`접근자 프로퍼티를 사용하는 것에는 제한이 있다.
+아래와 같은 경우 직접 상속을 통해 Object.prototype을 상속받지 않는 객체를 생성할 수도 있기 때문에 `__proto__`를 사용할 수 없는 경우가 있다.
+
+```javascript
+// obj는 프로토타입 체인의 종점이다. 따라서 Object.__proto__를 상속받을 수 없다.
+const obj = Object.create(null);
+
+// obj는 Object.__proto__를 상속받을 수 없다.
+console.log(obj.__proto__); // undefined
+
+// 따라서 Object.getPrototypeOf 메서드를 사용하는 편이 좋다.
+console.log(Object.getPrototype(obj)); // null
+```
+
+`__proto__` 접근자 프로퍼티 대신 프로토 타입 참조를 취득하고 싶다면 **Objec.getPrototypeOf** 메서드를 사용하고, 프로토타입 교체를 하고 싶다면 **Object.setPrototypeOf** 메서드를 사용하는 것을 권장한다.
+
+```javascript
+const obj = {};
+const parent = { x: 1 };
+
+// obj 객체의 프로토타입을 취득
+Object.getPrototypeOf(obj); // obj.__proto__;
+//obj 객체의 프로토타입을 교체
+Object.setPrototypeOf(obj, parent); // obj.__proto__ = parent;
+
+console.log(obj.x); // 1
+```
+
+Object.getPrototypeOf 메서드와 Object.setPrototypeOf 메서드는 get Object.prototype.**proto**와 set Object.prototype.**proto**의 처리 내용과 정확히 일치한다.
+
+- ### 함수 객체의 prototype 프로퍼티
 - ### 프로토타입의 constructor 프로퍼티와 생성자 함수
 
 ## 🎭 리터럴 표기법에 의해 생성된 객체의 생성자 함수와 프로토타입

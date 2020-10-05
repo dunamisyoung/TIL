@@ -62,6 +62,72 @@ console.log(circle.getArea()); // 78.53981633974483
 
 ## 👪 상속과 프로토타입
 
+**상속(inheritance)은 객체지향 프로그래밍의 핵심 개념으로, 어떤 객체의 프로퍼티 또는 메서드를 다른 객체가 상속받아 그대로 사용할 수 있는 것을 말한다.**
+
+상속을 통해 불필요한 중복을 제거하며 기존의 코드를 재사용하여 개발비용을 현저히 줄일수 있다.
+
+```javascript
+// 생성자 함수
+function Circle(radius) {
+  this.radius = radius;
+  this.getArea = function () {
+    // Math.PI는 원주율을 나타내는 싱수다.
+    return Math.Pi * this.radius ** 2;
+  };
+}
+
+// 반지름이 1인 인스턴스 생성
+const circle = new Circle(1);
+// 반지름이 2인 인스턴스 생성
+const circle2 = new Circle(2);
+
+// Circle 생성자 함수는 인스턴스를 생성할 때마다 동일한 동작을 하는
+// getArea 메서드를 중복 생성하고 모든 인스턴스가 중복 소유한다.
+// getArea 메서드는 하나만 생성하여 모든 인스턴스가 공유해서 사용하는 것이 바람직하다.
+console.log(circle1.getArea === circle2.getArea); // false;
+
+console.log(circle1.getArea()); // 3.141592653589793
+console.log(circle2.getArea()); // 12.566370614359172
+```
+
+생성자 함수는 동일한 프로퍼티(메서드 포함)구조를 갖는 객체를 여러개 생성할때 유용하다.
+
+Circle 생성자 함수가 생성하는 모든 객체(인스턴스)는 radius 프로퍼티와 getArea 메서드를 갖는다. radius 프로퍼티값은 일반적으로 인스턴스마다 다르지만 <u>**getArea 메서드**는 동일한 내용의 메서드를 사용</u>하므로 **단 하나만 생성하여 모든 인스턴스가 공유해서 사용하는 것이 바람직하다.**
+
+하지만 위에 예제는 모든 인스턴스가 메서드를 중복적으로 생성하기에 메모리관점과 퍼포먼스 관점에서 좋지 못하다. 상속을 통해 불필요한 중복을 제거 하면 아래와 같다.
+
+```javascript
+// 생성자 함수
+function Circle(radius) {
+  this.radius = radius;
+}
+
+// Circle 생성자 함수가 생성한 모든 인스턴스가 getArea 메서드를
+// 공부해서 사용할 수 있도록 프로토타입에 추가한다.
+// 프로토타입은 Circle 생성자 함수의 prototype 프로퍼티에 바인딩되어 있다.
+Cricle.prototype.getArea = function () {
+  return Math.PI * this.radius ** 2;
+};
+
+// 인스턴스 생성
+const circle = new Circle(1);
+const circle = new Circle(2);
+
+// Circle 생성자 함수가 생성한 모든 인스턴스는 부모 객체의 역할을 하는
+// 프로토타입 Circle.prototype으로부터 getArea 메서드를 상속받는다.
+// 즉, Circle 생성자 함수가 생성하는 모든 인스턴스는 하나의 getArea 메서드를 공유한다.
+console.log(circle1.getArea === circle2.getArea); // true
+
+console.log(circle1.getArea()); // 3.141592653589793
+console.log(circle2.getArea()); // 12.566370614359172
+```
+
+Circle 생성자 함수가 생성한 모든 인스턴스는 자신의 프로토타입, 즉 상위(부모) 객체 역할을 하는 Circle.prototype의 모든 프로퍼티와 메서드를 상속받는다.
+
+getArea 메서드는 단 하나만 생성되어 프로토타입인 Circle.prototype의 메서드로 할당되어있다. 따라서 Circle 생성자 함수가 생성하는 모든 인스턴스는 상속에 의해 getArea 메서드를 사용할수있다.
+
+상속은 코드의 재사용관점에서 매우 유용하며 생성자 함수가 생성할 모든 인스턴스가 공통적으로 사용할 프로퍼티나 메서드를 **프로토타입에 미리구현해 놓으면 생성자 함수를 통해 만들어진 모든 인스턴스는 별도의 구현없이 상위 객체인 프로토타입의 자산을 공유하여 사용**할 수 있다.
+
 ## 🎨 프로토타입 객체
 
 - ### `__proto__` 접근자 프로퍼티

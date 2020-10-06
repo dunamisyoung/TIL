@@ -228,7 +228,78 @@ console.log(obj.x); // 1
 Object.getPrototypeOf 메서드와 Object.setPrototypeOf 메서드는 get Object.prototype.**proto**와 set Object.prototype.**proto**의 처리 내용과 정확히 일치한다.
 
 - ### 함수 객체의 prototype 프로퍼티
+
+**함수 객체만이 소유하는 prototype 프로퍼티는 생성자 함수가 생성할 인스턴스의 프로토타입을 가리킨다.**
+
+```javascript
+// 함수 객체는 prototype 프로퍼티를 소유한다.
+(function () {}.hasOwnProperty('prototype')); // -> true
+
+// 일반 객체는 prototype 프로퍼티를 소유하지 않는다.
+({}.hasOwnProperty('prototype')); // -> false
+```
+
+**prototype 프로퍼티는 생성자 함수가 생성할 객체(인스턴스)의 프로토타입을 가리킨다.**
+따라서 생성자 함수로서 호출할 수 없는 함수, 즉 non-constructor인 화살표 함수와 ES6 메서드 축약표현으로 정의한 메서드는 prototytpe 프로퍼티를 소유하지 않으며 프로토타입도 생성하지 않는다.
+
+```javascript
+// 화살표 함수는 non-constructor다.
+const Person = (name) => {
+  this.name = name;
+};
+
+// non-constructor는 prototype 프로퍼티를 소유하지 않는다.
+console.log(Person.hasOwnProperty('prototype')); // false
+
+// non-constructor는 프로토타입을 생성하지 않는다.
+console.log(Person.prototype); // undefined
+
+// ES6 메서드 축약 표현으로 정의한 메서드는 non-constructor다.
+const obj = {
+  foo() {},
+};
+
+// non-constructor는 prototype 프로퍼티를 소유하지 않는다.
+console.log(obj.foo.hasOwnProperty('prototype')); // false
+
+// non-constructor는 프로토타입을 생성하지 않는다.
+console.log(obj.foo.prototype); // undefined
+```
+
+일반 함수도 prototype 프로퍼티를 소유하지만 객체를 생성하지 않는 일반함수의 prototype 프로퍼티는 의미가없다.
+
+**모든 객체가 가지고 있는 `__proto__`접근자 프로퍼티**와 **함수객체만이 가지고 있는 prototype 프로퍼티**는 결국 <u>동일한 프로토타입객체를 가리킨다.</u>
+
+```javascript
+function Person(name) {
+  this.name = name;
+}
+
+const me = new Person('Lee');
+
+// 결국 Person.prototype과 me.__proto__는 결국 동일한 프로토타입을 가리킨다.
+console.log(Person.prototype === me.__proto__); // true
+```
+
 - ### 프로토타입의 constructor 프로퍼티와 생성자 함수
+
+**모든 프로토타입 객체는 constructor를 갖는다.**
+**constructor 프로퍼티는 prototype 프로퍼티로 자신을 참조하고 있는 생성자 함수를 가리킨다.**
+
+```javascript
+// 생성자 함수
+function Person(name) {
+  this.name = name;
+}
+
+const me = new Person('Lee');
+
+// me 객체의 생성자 함수는 Person이다.
+// me 는 같은 프로토타입 체인안에 있는 prototye객체의 constuctor를 상속받아 사용할 수 있다.
+console.log(me.constructor === Person); // true
+```
+
+위 예제에서 Person 생성자 함수는 me 객체를 생성했다.
 
 ## 🎭 리터럴 표기법에 의해 생성된 객체의 생성자 함수와 프로토타입
 

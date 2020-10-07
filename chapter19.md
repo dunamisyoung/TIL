@@ -439,7 +439,41 @@ window.Object === Object; // ture
 
 ## 🧬 객체 생성 방식과 프로토타입의 결정
 
+객체는 다음과 같이 다양한 생성 방법이 있다.
+
+- 객체 리터럴
+- Object 생성자 함수
+- 생성자 함수
+- Object.create 메서드
+- 클래스(ES6)
+
+다양한 방식으로 생성된 **모든 객체는 각 방식마다 세부적인 객체 생성 방식의 차이는 있으나 추상 연산 OrdinatyObjectCreate에 의해 생성된다는 공통점이 있다.**
+
+추상 연산 OrdinaryObjectCreate는 필수적으로 자신이 생성할 객체의 프로토타입을 인수로 전달받는다. OrdinaryObjectCreate는 빈 객체를 생성한 후, 객체에 추가할 프로퍼티 목록이 인수로 전달된 경우 프로퍼티를 객체에 추가한다. 그리고 인수로 전달받은 프로토타입을 자신이 생성한 객체에 `[[Prototype]]` 내부 슬롯에 할당한 다음, 생성한 객체를 반환한다.
+
+**즉, 프로토타입은 추상 연산 OrdinaryObjectCreate에 전달되는 인수에 의해 결정된다. 이 인수는 객체가 생성되는 시점에 객체 생성 방식에 의해 결정된다.**
+
 - ### 객체 리터럴에 의해 생성된 객체의 프로토타입
+
+자바스크립트 엔진은 객체리터럴을 평가하여 객체를 생성할때 OrdinaryObjectCreate를 호출한다.
+이때 추상 연산 OrdinaryObjectCreate에 전달되는 프로토타입은 Object.prototype이다.
+
+```javascript
+const obj = { x: 1 };
+```
+
+위 객체 리터럴이 평가되면 추상 연산 OrdinaryObjectCreate에 의해 Object 생성자 함수와 Object.prototype과 생성된 객체 사이에 연결이 만들어진다.
+
+객체 리터럴에 의해 생성된 객체는 Object.prototype을 프로토타입객체로 갖게되며 이로써 Object.prototype이 가지고있는 프로퍼티와 메서드를 상속에의해 자신의 것처럼 사용할수 있다.
+
+```javascript
+const obj = { x: 1 };
+
+// 객체 리터럴에 의해 생성된 obj 객체는 Object.prototype을 상속받는다.
+console.log(obj.contructor === Object); // true
+console.log(obj.hasOwnProperty('x')); // true
+```
+
 - ### Object 생성자 함수에 의해 생성된 객체의 프로토타입
 - ### 생성자 함수에 의해 생성된 객체의 프로토타입
 

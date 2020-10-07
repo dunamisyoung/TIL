@@ -500,6 +500,39 @@ console.log(obj.hasOwnProperty('x')); // true
 
 - ### 생성자 함수에 의해 생성된 객체의 프로토타입
 
+new 연산자와 함께 생성자 함수를 호출하여 인스턴스를 생성하면 다른 객체 생성방식과 마찬가지로 추상연산 OrdinaryObjectCreate가 호출된다. 즉, 생성자 함수에 의해 생성되는 객체의 프로토타입은 생성자 함수의 prototype 프로퍼티에 바인딩 되어있는 객체이다.
+
+```javascript
+function Person(name) {
+  this.name = name;
+}
+
+const me = new Person('Lee');
+```
+
+표준 빌트인 객체인 Object 생성자 함수와 더불어 생성된 프로토타입 Object.prototype은 다양한 빌트인 메서드(hasOwnProperty,propertyIsEnumerable 등)를 갖고 있다. 하지만 사용자 정의 생성자 함수 Person과 더불어 생성된 프로토타입 Person.prototype의 프로퍼티는 constructor 뿐이다.
+
+프로토타입 Person.prototype에 프로퍼티를 추가하여 하위(자식) 객체가 상속 받을수 있게 구현해보자.
+
+```javascript
+function Person(name) {
+  this.name = name;
+}
+
+// 프로토타입 메서드
+Person.prototype.sayHello = function () {
+  console.log(`Hi My name is ${this.name}`);
+};
+
+const me = new Person('Lee');
+const you = new Person('Kim');
+
+me.sayHello(); // Hi! My name is Lee
+you.sayHello(); // Hi My name is Kim
+```
+
+Person 생성자 함수를 통해 생성된 모든 객체는 프로토타입에 추가된 sayHello 메서드를 자신의 메서드 처럼 사용할수 있다.
+
 ## 🔗 프로토타입 체인
 
 ## 🕶 오버라이딩과 프로퍼티 섀도잉

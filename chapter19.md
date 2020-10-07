@@ -535,6 +535,72 @@ Person 생성자 함수를 통해 생성된 모든 객체는 프로토타입에 
 
 ## 🔗 프로토타입 체인
 
+```javascript
+function Person(name) {
+  this.name = name;
+}
+
+// 프로토타입 메서드
+Person.prototype.sayHello = function () {
+  console.log(`Hi! My name is ${this.name}`);
+};
+
+const me = new Person('Lee');
+
+// hasOwnProperty는 Object.prototype의 메서드다.
+console.log(me.hasOwnProperty('name')); // true
+```
+
+Person 생성자 함수에 의해 생성된 me 객체는 Object.prototype의 메서드인 hasOwnProperty를 호출할 수 있다. 이것은 me 객체가 Person.prototype뿐만 아니라 Object.prototype도 상속받았다는 것을 의미한다.
+
+me 객체의 프로토타입은 Person.prototype이다.
+
+```javascript
+Object.getPrototypeOf(me) === Person.prototype; // -> true
+```
+
+Person.prototype의 프로토타입은 Object.prototype이다.
+
+**자바스크립트는 객체의 프로퍼티(메서드 포함)에 접근하려고 할 때 해당 객체에 접근하려는 프로퍼티가 없다면 `[[Prototype]]` 내부슬롯의 참조를 따라 부모 역할을 하는 프로토타입의 프로퍼티를 룬차적으로 검색한다. 이를 프로토타입 체인이라한다.**
+
+```javascript
+// hasOwnProperty는 Object.prototype의 메서드다.
+// me 객체는 프로토타입 체인을 따라 hasOwnProperty 메서드를 검색하여 사용한다.
+me.hasOwnProperty('name'); -> true
+```
+
+위 예제의 자바스크립트 엔진의 메서드 검색과정이다.
+
+1. 먼저 hasOwnProperty 메서드를 호출한 me 객체에서 검색하고 없다면 프로토타입 체인을 따라 `[[Prototype]]` 내부슬롯에 바인딩되어있는 프로토타입으로 이동해 hasOwnProperty 메서드를 검색한다.
+
+2. Person.prototype에도 hasOwnProperty메서드가 없으므로 프로토타입 체인을 따라, `[[Prototype]]` 내부 슬롯에 바인딩되어있는 프로토타입으로 이동하여 hasOwnProperty 메서드를 검색한다.
+
+3. Object.prototype에는 hasOwnProperty 메서드가 존재한다. 자바스크립트 엔진은 Object.prototype.hasOwnProperty 메서드를 호출해 Object.prototype.hasOwnProperty메서드의 this에는 me 객체가 바인딩된다.
+
+```javascript
+Object.prototype.hasOwnProperty.call(me.'name');
+```
+
+**프로토타입 체인의 최상위에 위치하는 값은 언제나 Object.prototype이기에 모든 객체는 Object.prototype을 상속받는다.**
+
+**Object.prototype의 프로토타입 즉`[[Prototype]]` 내부 슬롯의 값은 null이다.**
+
+프로토타입 체인의 종접인 Object.prototype에서도 프로퍼티를 검색할 수 없는 경우, undefined를 반환한다. -- 에러는 따로 발생하지 않는다.
+
+```javascript
+console.log(me.foo); // undefined
+```
+
+이에 반해 프로퍼티가 아닌 식별자는 스코프 체인에서 검색한다.
+
+```javascript
+me.hasOwnProperty('name');
+```
+
+위 예제의 경우, 먼저 스코프 체인에서 me 식별자를 전역에서 선언되었으니 전역 스코프에서 검색한후,me 객체의 프로토타입 체인안에서 hasOwnProperty 메서드를 검색한다.
+
+**이처럼 스코프 체인과 프로토타입 체인은 서로 연관 없이 별도로 동작하는 것이 아니라 서로 협력하여 식별자와 프로퍼티를 검색하는데 사용된다.**
+
 ## 🕶 오버라이딩과 프로퍼티 섀도잉
 
 ## 🎠프로토타입의 교체

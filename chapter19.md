@@ -475,6 +475,29 @@ console.log(obj.hasOwnProperty('x')); // true
 ```
 
 - ### Object 생성자 함수에 의해 생성된 객체의 프로토타입
+
+**Object 생성자 함수를 인수 없이 호출하면 빈 객체가 생성된다.** Object생성자 함수를 호출하면 객체 리터럴과 마찬가지로 추상연산 OrdinaryObjectCreate가 호출되며 이때 전달되는 프로토타입은 Object.prototype이다.
+
+```javascript
+const obj = new Object();
+obj.x = 1;
+```
+
+Object 생성자 함수에 의해 생성된 객체는 Object.prototype을 프로토타입객체로 갖게되며, 이로써 Objcet.prototype을 상속받는다.
+
+```javascript
+const obj = new Object();
+obj.x = 1;
+
+// Object 생성자 함수에 의해 생성된 obj 객체는 Object.prototype을 상속받는다.
+console.log(obj.contructor === Object); // true
+console.log(obj.hasOwnProperty('x')); // true
+```
+
+**객체 리터럴과 Object 생성자 함수에 의한 객체생성방식의 차이는 프로퍼티를 추가하는 방식에있다.**
+
+객체리터럴은 내부에 프로퍼티를 추가하고, Object생성자 함수는 빈객체를 생성한 이후 프로퍼티를 추가해야한다.
+
 - ### 생성자 함수에 의해 생성된 객체의 프로토타입
 
 ## 🔗 프로토타입 체인

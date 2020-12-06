@@ -32,3 +32,5 @@ Today I Learn
 # [🎈16. 프로퍼티와 어트리뷰트 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/chapter16.md)
 
 # [🎈17. 생성자 함수에 의한 객체 생성 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/chapter17.md)
+
+# [🎈22. 생성자 함수에 의한 객체 생성 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/chapter22.md)

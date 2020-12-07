@@ -25,8 +25,8 @@ ES6 이전에 함수를 호출하면 암묵적으로 arguments 객체와 this가
 
 ```javascript
 const foo = function () {
-	console.log(this);
-}
+  console.log(this);
+};
 foo(); // window - 일반함수 호출의 this는 전역객체를 가르킨다.
 
 const obj = { foo };
@@ -34,8 +34,7 @@ obj.foo(); // obj - 메서드 호출의 this는 메서드를 호출한 객체를
 
 new foo(); // foo {} - foo 함수 내부의 this는 메서드를 호출한 객체 obj를 가리킨다.
 
-const bar = {name : 'bar'}; // call | apply | bind 메서드에 의한 간접호출에 this는
-내부로 전달한 인수에 의해서 결정된다.
+const bar = { name: 'bar' }; // call | apply | bind 메서드에 의한 간접호출에 this는 내부로 전달한 인수에 의해서 결정된다.
 
 foo.call(bar); // bar - 호출과 함께 this 바인딩 까지 전달
 foo.apply(bar); // bar - 호출과 함께 this 바인딩 까지 전달

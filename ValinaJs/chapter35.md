@@ -8,7 +8,7 @@ ES6에서 도입된 스프레드 문법`...`은 하나로 뭉쳐 있는 여러�
 
 스프레드 문법의 결과는 값이아니라 값들의 목록이다.
 
-```jsx
+```javascript
 const list = ...[1, 2, 3]; // SyntaxError : Unexpected token ...
 ```
 
@@ -18,11 +18,11 @@ const list = ...[1, 2, 3]; // SyntaxError : Unexpected token ...
 - 배열 리터럴의 요소 목록
 - 객체 리터럴의 프로퍼티 목록
 
-### 1. 함수 호출문의 인수 목록에서 사용하는 경우
+### 🚗 1. 함수 호출문의 인수 목록에서 사용하는 경우
 
 요소들의 집합인 배열을 펼쳐서 개별적인 값들의 목록으로 만든후 이를 함수의 인수 목록으로 전달해야 하는경우
 
-```jsx
+```javascript
 const arr = [1, 2, 3];
 
 const max = Math.max(arr); // NaN
@@ -34,13 +34,13 @@ Math.max메서드는 매개변수 개수를 확정할 수 없는 가면 인자 �
 
 이 같은 문제를 해결하기 위해 배열을 펼쳐서 요소들을 개별적인 값들의 목록으로 만든후 Math.max 메서드의 인수로 전달해야한다.
 
-```jsx
+```javascript
 const max = Math.max(...arr); // -> 3
 ```
 
 기존에 스프레드 문법이 적용되기 전에는 Function.prototype.apply를 사용했다.
 
-```jsx
+```javascript
 var arr = [1, 2, 3];
 
 // apply 함수의 2번째 인수(배열)는 apply 함수가 호출하는 함수의 인수 목록이다.
@@ -51,25 +51,25 @@ var max = Math.max.apply(null, arr); -> 3
 - 스프레드 문법은 전개
 - REST 파라미터는 함수에 전달된 인수들의 목록을 배열로 전달 받는다. `(...args)`
 
-## 2. 배열 리터럴 내부에서 사용하는경우
+## 🛒 2. 배열 리터럴 내부에서 사용하는경우
 
-### 2.1 concat
+### 🏏 2.1 concat
 
-```jsx
+```javascript
 var arr = [1, 2].concat([3, 4]);
 console.log(arr); // [1 ,2 ,3 ,4]
 ```
 
 concat → 스프레드 문법사용
 
-```jsx
+```javascript
 const arr = [...[1, 2], ...[3, 4]];
 console.log(arr); //[1, 2, 3, 4]
 ```
 
-### 2.2 splice
+### 🎫 2.2 splice
 
-```jsx
+```javascript
 var arr1 = [1, 4];
 var arr2 = [2, 3];
 
@@ -83,7 +83,7 @@ console.log(arr1); // [1, [2, 3], 4]
 
 splice → 스프레드 문법사용
 
-```jsx
+```javascript
 const arr1 = [1, 4];
 const arr2 = [2, 3];
 
@@ -91,9 +91,9 @@ arr.splice(1, 0, ...arr2);
 console.log(arr1); // [1, 2, 3, 4]
 ```
 
-### 2.3 slice를 이용한 배열복사
+### 📠 2.3 slice를 이용한 배열복사
 
-```jsx
+```javascript
 var origin = [1, 2];
 var copy = origin.slice();
 
@@ -103,7 +103,7 @@ console.log(copy === origin); // false
 
 slice → 스프레드 문법사용
 
-```jsx
+```javascript
 const origin = [1, 2];
 const copy = [...origin];
 
@@ -111,9 +111,9 @@ console.log(copy); // [1, 2]
 console.log(copy === origin); // false
 ```
 
-### 2.4 이터러블을 배열로 변환
+### 🎭 2.4 이터러블을 배열로 변환
 
-```jsx
+```javascript
 function sum() {
   // 이터러블이면서 유사 배열 객체인 arguments를 배열로 변환
   var args = Array.prototype.slice.call(arguments);
@@ -128,7 +128,7 @@ console.log(sum(1, 2, 3)); //6
 
 스프레드 문법을 이용한 이터러블 → 배열
 
-```jsx
+```javascript
 function sum() {
   return [...arguments].reduce((pre, cur) => pre + cur, 0);
 }
@@ -140,7 +140,7 @@ console.log(sum(1, 2, 3)); //6
 
 이터러블이 아닌 유사 배열 객체를 **배열로 변경하려면 ES6에서 도입된 Array.from메서드를 사용**한다.
 
-```jsx
+```javascript
 const arrayLike = {
   0: 1,
   1: 2,
@@ -151,11 +151,11 @@ const arrayLike = {
 Array.from(arrayLike); // -> [1, 2, 3]
 ```
 
-### 3. 객체 리터럴 내부에서 사용하는 경우
+### 🔬 3. 객체 리터럴 내부에서 사용하는 경우
 
 스프레드 프로퍼티를 사용하면 객체 리터럴의 프로퍼티 목록에도 스프레드 문법을 사용할 수 있다.
 
-```jsx
+```javascript
 // 스프레드 프로퍼티
 // 객체복사(얕은 복사)
 
@@ -172,7 +172,7 @@ console.log(merged)// {x: 1, y: 2, a: 3, b: 4}
 
 스프레드 프로퍼티가 제안되기 전에는 ES6에서 도입된 Object.assign 메서드를 사용하여 스프레드 문법을 대신했다.
 
-```jsx
+```javascript
 // Object.assign
 const merged = Object.assign({}, { x: 1, y: 2 }, { y: 10, z: 3 });
 console.log(merged);
@@ -180,5 +180,3 @@ console.log(merged);
 // 스프레드 프로퍼티
 const merged = { ...{ x: 1, y: 2 }, ...{ y: 10, z: 3 } };
 ```
-
-2020년 12월 2일

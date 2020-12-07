@@ -162,5 +162,3 @@ person.foo(function(){
 	console.log(`Hi! my name is ${this.name}.`); // Hi! my name is Lee.
 }
 ```
-
-2020년 12월 4일

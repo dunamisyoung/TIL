@@ -33,6 +33,6 @@ Today I Learn
 
 # [🎈17. 생성자 함수에 의한 객체 생성 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter17.md)
 
-# [🎈22. 생성자 함수에 의한 객체 생성 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter22.md)
+# [🎈22. This part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter22.md)
 
 # [🎈35. 스프레드 문법 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter35.md)

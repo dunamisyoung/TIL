@@ -36,3 +36,5 @@ Today I Learn
 # [🎈22. This part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter22.md)
 
 # [🎈35. 스프레드 문법 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter35.md)
+
+# [🎈36. 디스트럭처링할당 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter36.md)

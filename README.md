@@ -1,6 +1,6 @@
 # TIL
 
-Today I Learn
+**Today I Learn**
 
 하루하루 공부한 내용들을 정리해 놓는 저장소입니다!
 대부분 ES6 이전까지 정리하였고, 나머지는 차츰차츰 업데이트 하겠습니다!
@@ -40,3 +40,5 @@ Today I Learn
 ### [🎈36. 디스트럭처링할당 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter36.md)
 
 > # React
+
+### [🎨01. JSX소개 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/part01.md)

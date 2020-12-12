@@ -42,3 +42,5 @@
 > # React
 
 ### [🎨01. JSX소개 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/part01.md)
+
+### [🎨02. 엘리먼트 렌더링 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/part02.md)

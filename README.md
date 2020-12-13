@@ -21,6 +21,8 @@
 
 ### [🎈10. 객체 리터럴 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter10.md)
 
+### [🎈11. 원시값과 객체의 비교 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter11.md)
+
 ### [🎈12. 함수 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter12.md)
 
 ### [🎈13. 스코프 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter13.md)

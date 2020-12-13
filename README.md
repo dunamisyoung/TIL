@@ -19,7 +19,7 @@
 
 ### [🎈9. 타입 변환과 단축 평가 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter09.md)
 
-### [🎈10. 객체 리터럴 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter010.md)
+### [🎈10. 객체 리터럴 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter10.md)
 
 ### [🎈12. 함수 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter12.md)
 
@@ -44,3 +44,5 @@
 ### [🎨01. JSX소개 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/part01.md)
 
 ### [🎨02. 엘리먼트 렌더링 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/part02.md)
+
+### [🎨03. 엘리먼트 렌더링 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/part03.md)

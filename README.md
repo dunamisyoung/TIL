@@ -40,6 +40,10 @@
 
 - #### [🎈17. 생성자 함수에 의한 객체 생성 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter17.md)
 
+- #### [🎈18. 함수와 일급객체 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter18.md)
+
+- #### [🎈19. 프로토타입 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter19.md)
+
 - #### [🎈22. This part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter22.md)
 
 - #### [🎈35. 스프레드 문법 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter35.md)

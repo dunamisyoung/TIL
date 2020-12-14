@@ -165,7 +165,7 @@ name 프로퍼티는 ES5와 ES6에서의 동작이 다른데 익명 함수표현
 
 `[[Prototype]]` 내부슬롯은 객체지향 프로그래밍의 상속을 구현하는 프로토타입 객체를 가르킨다.
 
-**P**roto**** 프로퍼티는 `[[Prototype]]` 내부 슬롯이 가리키는 프로토타입 객체에 접근을위한 접근자 프로퍼티 이다. 이는 내부슬롯에는 직접접근할수 없기에 프로토타입 객체에 간접적인 접근 방식을 제공하는 것이다.
+**P**roto\*\*\*\* 프로퍼티는 `[[Prototype]]` 내부 슬롯이 가리키는 프로토타입 객체에 접근을위한 접근자 프로퍼티 이다. 이는 내부슬롯에는 직접접근할수 없기에 프로토타입 객체에 간접적인 접근 방식을 제공하는 것이다.
 
 ```javascript
 // 객체 리터럴 방식으로 생성한 객체의 프로토 타입 객체는 Object.prototype 이다.
@@ -183,3 +183,19 @@ console.log(tangerine.__proto__ === Object.prototype); // true
 console.log(tangerine.hasOwnProperty('age')); // true
 console.log(tangerine.hasOwnProperty('__proto__')); // false
 ```
+
+### 2.6 protorype 프로퍼티
+
+prototype 프로퍼티는 생성자 함수로 호출할수 있는 함수 객체, 즉, constructor만이 소유하는 프로퍼티이다. 일반객체와, 생성자 함수로 호출할수 없는 non-constructor는 prototype 프로퍼티가 없다.
+
+대표적으로 ES6의 화살표 함수가 있다.
+
+```javascript
+// ES5 함수 객체는 protorype 프로퍼티를 소유한다.
+(function () {}.hasOwnProperty('prototype')); // true
+
+// 일반 객체는 prototype 프로퍼티를 소유하지 않는다.
+({}.hasOwnProperty('prototype')); // false
+```
+
+prototype 프로퍼티는 함수가 객체를 생성하는 생성자 함수로 호출될때 함수가 생성할 인스턴스의 프로토타입 객체를 가르킨다.

@@ -67,5 +67,18 @@
 
 - #### [🎨03. 엘리먼트 렌더링 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/part03.md)
 
+<details>
+<summary>Modern React With Velopert</summary>
+<div markdown="3">
+
+- #### [🎨01. 리액트는 어쩌다가 만들어졌을까](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert%2001.md)
+
+- #### [🎨02. JSX의 기본 규칙 알아보기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert02.md)
+
+- #### [🎨03. Props 를 통해 컴포넌트에게 값 전달하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert03.md)
+
+</div>
+</details>
+
 </div>
 </details>

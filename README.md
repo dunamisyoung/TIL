@@ -44,6 +44,8 @@
 
 - #### [🎈19. 프로토타입 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter19.md)
 
+- #### [🎈20. strict mode part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter20.md)
+
 - #### [🎈22. This part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter22.md)
 
 - #### [🎈35. 스프레드 문법 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter35.md)

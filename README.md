@@ -83,6 +83,8 @@
 
 - #### [🎨05. useState를 통해 컴포넌트에서 바뀌는 값 관리하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert05.md)
 
+- #### [🎨06. 리액트에서 input 상태 관리하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert06.md)
+
 </div>
 </details>
 

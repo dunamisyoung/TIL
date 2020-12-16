@@ -32,7 +32,7 @@ foo(); // window - 일반함수 호출의 this는 전역객체를 가르킨다.
 const obj = { foo };
 obj.foo(); // obj - 메서드 호출의 this는 메서드를 호출한 객체를 가리킨다.
 
-new foo(); // foo {} - foo 함수 내부의 this는 메서드를 호출한 객체 obj를 가리킨다.
+new foo(); // foo {} - foo 함수 내부의 this는 함수가 생성한 인스턴스를 가리킨다.
 
 const bar = { name: 'bar' }; // call | apply | bind 메서드에 의한 간접호출에 this는 내부로 전달한 인수에 의해서 결정된다.
 
@@ -72,7 +72,7 @@ const obj = {
 obj.foo();
 ```
 
-위 방법 이외에 자바스크립트는 this를 명시적으로 바인딩 할 수 있는 **Function.prototype.apply, Function.prototype.apply, Function.prototype.bind** 메서드를 제공한다.
+위 방법 이외에 자바스크립트는 this를 명시적으로 바인딩 할 수 있는 **Function.prototype.apply, Function.prototype.call, Function.prototype.bind** 메서드를 제공한다.
 
 ```javascript
 var value = 1;

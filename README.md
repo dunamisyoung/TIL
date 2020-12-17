@@ -85,6 +85,8 @@
 
 - #### [🎨06. 리액트에서 input 상태 관리하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert06.md)
 
+- #### [🎨07. 리액트에서 input 상태 관리하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert07.md)
+
 </div>
 </details>
 

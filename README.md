@@ -85,7 +85,11 @@
 
 - #### [🎨06. 리액트에서 input 상태 관리하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert06.md)
 
-- #### [🎨07. 리액트에서 input 상태 관리하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert07.md)
+- #### [🎨07. 여러개의 input 상태 관리하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert07.md)
+
+- #### [🎨08. useRef 로 특정 DOM 선택하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert08.md)
+
+- #### [🎨09. 리액트에서 input 상태 관리하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert09.md)
 
 </div>
 </details>

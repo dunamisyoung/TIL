@@ -91,6 +91,10 @@
 
 - #### [🎨09. 배열 렌더링하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert09.md)
 
+- #### [🎨10. useRef 로 컴포넌트 안의 변수 만들기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert10.md)
+
+- #### [🎨11. 배열에 항목 추가하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert11.md)
+
 </div>
 </details>
 

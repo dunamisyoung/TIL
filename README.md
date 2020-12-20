@@ -97,6 +97,8 @@
 
 - #### [🎨12. 배열에 항목 추가하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert12.md)
 
+- #### [🎨13. 배열에 항목 수정하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert13.md)
+
 </div>
 </details>
 

@@ -63,11 +63,11 @@
 <summary>React</summary>
 <div markdown="2">
 
-- #### [🎨01. JSX소개 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/part01.md)
+- #### [🎨01. JSX소개 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/Ref/part01.md)
 
-- #### [🎨02. 엘리먼트 렌더링 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/part02.md)
+- #### [🎨02. 엘리먼트 렌더링 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/Ref/part02.md)
 
-- #### [🎨03. 엘리먼트 렌더링 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/part03.md)
+- #### [🎨03. 엘리먼트 렌더링 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/Ref/part03.md)
 
 <details>
 <summary>Modern React With Velopert</summary>
@@ -95,7 +95,7 @@
 
 - #### [🎨11. 배열에 항목 추가하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert11.md)
 
-- #### [🎨12. 배열에 항목 추가하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert12.md)
+- #### [🎨12. 배열에 항목 제거하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert12.md)
 
 - #### [🎨13. 배열에 항목 수정하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert13.md)
 

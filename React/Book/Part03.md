@@ -240,3 +240,162 @@ MyComponent.defaultProps = {
 	name: '기본 값'
 }
 ```
+
+### propTypes를 통한 props검증
+
+컴포넌트의 필수 props를 지정하거나. props의 타입을 지정할때 **propTypes**가 사용된다.
+
+컴포넌트의 propTypes를 지정하는 것은 defaultProp을 설정하는것과 비슷하며 propTypes 사용시에는 코드상단에 `import PropTpes from 'prop-types'` 를사용하여 불러와야 한다.
+
+```jsx
+//MyComponent.js
+import React from 'react';
+import PropTpes from 'prop-types';
+
+const MyComponent = ({ name, children }) => {
+	return (
+		<div>
+			안녕하세요, 제 이름은 {name}입니다. <br />
+			children 값은 {children} 입니다.
+		</div>;
+	);
+};
+
+MyComponent.defaultProps = {
+	name: '기본 값'
+}
+
+MyComponent.propTypes = {
+	name : PropTypes.string
+};
+
+export default MyComponent;
+```
+
+이런식으로 설정시 name 값은 무조건 문자열 형태로 전달된다. 즉, 부모컴포넌트에서 사용자 정의 컴포넌트에 props의 값을 숫자로 전달해도 해당컴포넌트에서 props를 조회하면 문자열로 변환되야 하기에 오류가 발생한다.
+
+즉, 해당 컴포넌트에서 설정한 **`PropTypes.데이터타입`** 이 부모에게서 전달된 props 보다 우선순위에 있다고 판단된다. propTypes 설정시 부모요소에서 전달되는 dataType과 **propTypes.데이터타입**을 잘 확인할수 있도록하자.
+
+### isRequired를 사용한 필수 propTypes 설정
+
+propTypes를 지정하지 않았을 경우 경고 메시지를 띄워 주려면, **`propTypes.데이터타입.isRequired`** 이런식으로 설정 해주면 된다.
+
+예를 들어보자 favoriteNumer 라는 숫자를 필수 props로 설정하려면 아래와 같이 작성하면된다.
+
+```jsx
+//MyComponent.js
+import React from 'react';
+import PropTpes from 'prop-types';
+
+const MyComponent = ({ name, children , favoriteNumber }) => {
+	return (
+		<div>
+			안녕하세요, 제 이름은 {name}입니다. <br />
+			children 값은 {children} 입니다.
+			<br />
+			제가 좋아하는 숫자는 {favoriteNumber} 입니다.
+		</div>;
+	);
+};
+
+MyComponent.defaultProps = {
+	name: '기본 값'
+}
+
+MyComponent.propTypes = {
+	name : PropTypes.string,
+	favoriteNumber : PropTypes.string.isRequired
+};
+
+export default MyComponent;
+```
+
+위와 같이 설정했을때 부모 컴포넌트에서 props를 전달하지 않았다면 경고가 나타날 것이다.
+
+### 다양한 PropTypes 종류
+
+- array
+- arrayOf
+- bool
+- func
+- number
+- object
+- string
+- symbol
+- node
+- insanceOf
+- oneOf
+- oneOfType
+- objectOf
+- shape
+- any
+
+자세한 propTypes 정보는 [https://github.com/facebook/prop-types](https://github.com/facebook/prop-types)서 확인해보자 😉
+
+### 클래스형 컴포넌트에서 props 사용하기
+
+클래스형 컴포넌트에서 props를 사용하게된다면 render 함수 내에서 this.props를 조회해야된다. defaultProps와 propTypes는 함수형 컴포넌트와 동일하게 설정할수 있다.
+
+```jsx
+//MyComponent.js
+import React { Component } from 'react';
+import PropTpes from 'prop-types';
+
+class MyComponent extends Component {
+	render() {
+		const { name, children , favoriteNumber } = this.props;
+		return (
+			<div>
+				안녕하세요, 제 이름은 {name}입니다. <br />
+				children 값은 {children} 입니다.
+				<br />
+				제가 좋아하는 숫자는 {favoriteNumber} 입니다.
+			</div>;
+		);
+	};
+};
+
+MyComponent.defaultProps = {
+	name: '기본 값'
+}
+
+MyComponent.propTypes = {
+	name : PropTypes.string,
+	favoriteNumber : PropTypes.string.isRequired
+};
+
+export default MyComponent;
+```
+
+클래스형 컴포넌트에서 defaultProps와 propTypes를 class내부에서 지정도 가능하다.
+
+```jsx
+//MyComponent.js
+import React { Component } from 'react';
+import PropTpes from 'prop-types';
+
+class MyComponent extends Component {
+	static defaultProps = {
+	name: '기본 값'
+	};
+
+	static.propTypes = {
+	name : PropTypes.string,
+	favoriteNumber : PropTypes.string.isRequired
+	};
+
+	render() {
+		const { name, children , favoriteNumber } = this.props;
+		return (
+			<div>
+				안녕하세요, 제 이름은 {name}입니다. <br />
+				children 값은 {children} 입니다.
+				<br />
+				제가 좋아하는 숫자는 {favoriteNumber} 입니다.
+			</div>;
+		);
+	};
+};
+
+export default MyComponent;
+```

@@ -67,7 +67,7 @@
 
 - #### [🎨02. 엘리먼트 렌더링 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/Ref/part02.md)
 
-- #### [🎨03. 엘리먼트 렌더링 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/Ref/part03.md)
+- #### [🎨03. Components and Props part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/Ref/part03.md)
 
 <details>
 <summary>Modern React With Velopert</summary>

@@ -121,3 +121,122 @@ import * as Hello from './Mycomponent';
 [default export와 named export 차이점](https://medium.com/@_diana_lee/default-export%EC%99%80-named-export-%EC%B0%A8%EC%9D%B4%EC%A0%90-38fa5d7f57d4)
 
 ---
+
+## 3.3 Props
+
+---
+
+**props**는 poroperties를 줄인 표현으로 **컴포넌트 속성을 설정할때 사용하는 요소**이며 props 값은 해당 컴포넌트를 불러와 사용하는 부모 컴포넌트에서 설정가능하다.
+
+### JSX 내부에서 props 렌더링
+
+MyComponent를 수정하여 해당 컴포넌트에서 name이라는 props를 렌더링 하도록하자.
+
+```jsx
+//MyComponent.js
+import React from 'react';
+
+const MyComponent = (props) => {
+  return <div>안녕하세요, 제 이름은 {props.name}입니다. </div>;
+};
+
+export default MyComponent;
+```
+
+App컴포넌트에서 MyComponent의 props 값을 지정해보자.
+
+```jsx
+//App.js
+import React from 'react';
+import MyComponent from './MyComponent';
+
+const App = () => {
+  return <MyComponent name="React" />;
+};
+
+export default App;
+```
+
+이런식으로 React가 **사용자 정의 컴포넌트로 작성한 엘리먼트 발견하면** JSX 어트리뷰트와 자식을 해당 컴포넌트에 단일 객체로 전달하는데 이것을 **props**라고 한다.
+
+### defaultProps
+
+App.js 에서설정한 name 값을 지우고 MyComponent로 이동해서 defaultProps를 설정해보자.
+
+```jsx
+//MyComponent.js
+import React from 'react';
+
+const MyComponent = (props) => {
+  return <div>안녕하세요, 제 이름은 {props.name}입니다. </div>;
+};
+
+MyComponent.defaultProps = {
+  name: '기본 값',
+};
+
+export default MyComponent;
+```
+
+이처럼 defaultProps는 `컴포넌트명.defaultProps`으로 정의할 수 있으며 부모 컴포넌트에서 해당컴포넌트의 JSX 어트리뷰트와 자식을 정의하지 않았을때 기본값을 설정할수 있게 해줍니다.
+
+### children
+
+사용자 정의 컴포넌트를 사용할때 **태그사이의 내용**을 보여주는 props를 **children**이라고 하며, 태그사이의 내용에 접근하려면 props.children을 사용합니다.
+
+```jsx
+//App.js
+import React from 'react';
+import MyComponent from './MyComponent';
+
+const App = () => {
+  return <MyComponent>리액트</MyComponent>;
+};
+
+export default App;
+```
+
+Props는 항상 부모에서 자식으로 전달된다.
+
+사용자정의 컴포넌트의 JSX 어트리뷰트 → 해당컴포넌트의 props 객체로 전달
+
+```jsx
+//MyComponent.js
+import React from 'react';
+
+const MyComponent = props => {
+	return (
+		<div>
+			안녕하세요, 제 이름은 {props.name}입니다. <br />
+			children 값은 {props.children} 입니다.
+		</div>;
+	);
+};
+
+MyComponent.defaultProps = {
+	name: '기본 값'
+}
+
+export default MyComponent;
+```
+
+### 디스트럭쳐링 할당을 통한 props 값 추출
+
+MyComponent에서 props 값을 조회할때 `props.name` , `props.children` 처럼 props.라는 키워드를 붙여주게 되는데 이때 ES6 디스트럭쳐링 할당을 통해 간결하게 사용할수 있다.
+
+```jsx
+import React from 'react';
+
+const MyComponent = ({ name, children }) => {
+	return (
+		<div>
+			안녕하세요, 제 이름은 {name}입니다. <br />
+			children 값은 {children} 입니다.
+		</div>;
+	);
+};
+
+MyComponent.defaultProps = {
+	name: '기본 값'
+}
+```

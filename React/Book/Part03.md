@@ -92,7 +92,7 @@ export default MyComponent;
 import Mycomponent from './Mycomponent';
 import anything from './Mycomponent';
 
-export default const Mycomponent = 'hello';
+export default const Mycomponent = 'hello'; // 이건 안되요
 ```
 
 ### named export
@@ -157,7 +157,7 @@ const App = () => {
 export default App;
 ```
 
-이런식으로 React가 **사용자 정의 컴포넌트로 작성한 엘리먼트 발견하면** JSX 어트리뷰트와 자식을 해당 컴포넌트에 단일 객체로 전달하는데 이것을 **props**라고 한다.
+이런식으로 React가 **사용자 정의 컴포넌트로 작성한 엘리먼트를 발견하면** JSX 어트리뷰트와 자식을 해당 컴포넌트에 단일 객체로 전달하는데 이것을 **props**라고 한다.
 
 ### defaultProps
 
@@ -250,7 +250,7 @@ MyComponent.defaultProps = {
 ```jsx
 //MyComponent.js
 import React from 'react';
-import PropTpes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const MyComponent = ({ name, children }) => {
 	return (
@@ -280,7 +280,7 @@ export default MyComponent;
 
 propTypes를 지정하지 않았을 경우 경고 메시지를 띄워 주려면, **`propTypes.데이터타입.isRequired`** 이런식으로 설정 해주면 된다.
 
-예를 들어보자 favoriteNumer 라는 숫자를 필수 props로 설정하려면 아래와 같이 작성하면된다.
+예를 들어보자 favoriteNumber 라는 숫자를 필수 props로 설정하려면 아래와 같이 작성하면된다.
 
 ```jsx
 //MyComponent.js
@@ -398,4 +398,290 @@ class MyComponent extends Component {
 };
 
 export default MyComponent;
+```
+
+---
+
+## 3.4 State
+
+리액트에서 **state**는 컴포넌트 내부에서 **바뀔수 없는 값을 의미하며** state는 클래스형 컴포넌트의 state가 있고, 함수형 컴포넌트의 useState라는 함수를 통해 사용하는 state 두가지가 존재한다.
+
+### 클래스형 컴포넌트의 state
+
+```jsx
+// Counter.js
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      number: 0,
+    };
+  }
+  render() {
+    const { number } = this.state;
+    return (
+      <div>
+        <h1>{number}</h1>
+        <button
+          onClick={() => {
+            this.setState({ number: number + 1 });
+          }}
+        >
+          +1
+        </button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+```
+
+클래스형 컴포넌트에 state를 설정할때 constructor 메서드를 작성하여 설정했다.
+
+이는 컴포넌트의 생성자 메서드로써 클래스 컴포넌트에서 **constructor를 작성할때는 반드시 super(props)를 호출해야한다**. 이 함수가 호출되면 현재 클래스형 컴포넌트가 상속받는 Component 클래스가 지닌 생성자 함수를 호출해준다.
+
+this.state의 초기값은 객체 형식이어야한다. 또한, this.setState를 이용해 state에 새로운 값을 넣을수 있다.
+
+```jsx
+···
+ render() {
+    const { number } = this.state;
+    return (
+      <div>
+        <h1>{number}</h1>
+        <button
+          onClick={() => {
+            this.setState({ number: number + 1 });
+          }}
+        >
+          +1
+        </button>
+      </div>
+    );
+  }
+}
+export default Counter;
+```
+
+render 함수에서 현재 state를 조회하고 싶다면 this.state를 조회하면된다. **이벤트로 설정할 함수**를 넣어줄때 **화살표 함수 문법을 사용**해 넣어주어야한다. [이는 React가 기본적으로 stricmode로 실행되기에 일반함수로 호출된 this는 undefined를 출력한다.](https://blueshw.github.io/2017/07/01/arrow-function/)
+
+### state 객체안에 여러 값이 있을떄
+
+```jsx
+// Counter.js
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      number: 0,
+      count: 0,
+    };
+  }
+  render() {
+    const { number, count } = this.state;
+    return (
+      <div>
+        <h1>{number}</h1>
+        <h2>카운트 : {count}</h2>
+        <button
+          onClick={() => {
+            this.setState({ number: number + 1 });
+          }}
+        >
+          +1
+        </button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+```
+
+state 객체 안에는 여러값이 있을수 있다. this.setState 함수는 인자로 전달된 객체 안에 들어있는 값만 바꾸어준다. 즉, onClick 이벤트가 발생하여도, this.setState 함수의 인자로 전달된 객체만 바꾸기에 count 값은 변하지 않는다.
+
+### state를 constructor에서 꺼내기
+
+state의 초기값 설정에 있어서 기존에는 constructor 메서드를 선언 해주고, super를 호출했었지만, 다른 방식으로도 state의 초기값을 지정할수 있다.
+
+```jsx
+// Counter.js
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  state = {
+    number: 0,
+    count: 0,
+  };
+  render() {
+    const { number, count } = this.state;
+    return (
+      <div>
+        <h1>{number}</h1>
+        <h2>카운트 : {count}</h2>
+        <button
+          onClick={() => {
+            this.setState({ number: number + 1 });
+          }}
+        >
+          +1
+        </button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+```
+
+### this.setState에 객체 대신 함수인자 전달하기
+
+this.setState를 사용해 state값을 업데이트 할때 상태는 비동기적으로 업데이트된다. 이때 onClick에 설정한 함수 내부에서 this.setState를 두번 호출하면 어떻게될까?
+
+```jsx
+<button
+  onClick={() => {
+    this.setState({ number: number + 1 });
+    this.setState({ number: this.state.number + 1 });
+  }}
+>
+  +1
+</button>
+```
+
+위에서 말했던것처럼 [this.setState를 사용하여 값을 업데이트할때는 비동기적으로 동작](https://velog.io/@cada/React%EC%9D%98-setState%EA%B0%80-%EC%9E%98%EB%AA%BB%EB%90%9C-%EA%B0%92%EC%9D%84-%EC%A3%BC%EB%8A%94-%EC%9D%B4%EC%9C%A0)하기에 만약 이를 해결하고 싶다면 this.setState를 사용시 함수를 인자로 전달하면된다.
+
+```jsx
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      number: 0,
+    };
+  }
+  render() {
+    const { number } = this.state;
+    return (
+      <div>
+        <h1>{number}</h1>
+        <button
+          onClick={() => {
+            this.setState((prevState, props) => ({ number: prevState.number }));
+          }}
+        >
+          +1
+        </button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+```
+
+만약 업데이트 하는 과정에서 props가 필요하지 않다면 생략 가능하다.
+
+### this.setState가 끝난후 특정작업 실행
+
+setState를 사용하여 값을 업데이트 하고난후 어떠한 작업을 하고싶다면 setState의 두번째 파라미터로 콜백함수를 전달하면된다.
+
+```jsx
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      number: 0,
+    };
+  }
+  render() {
+    const { number } = this.state;
+    return (
+      <div>
+        <h1>{number}</h1>
+        <button
+          onClick={() => {
+            this.setState({ number: prevState.number }, () => {
+              console.log('setState 호출됨');
+            });
+          }}
+        >
+          +1
+        </button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+```
+
+## 함수형 컴포넌트에서의 useState 사용
+
+리액트 v16.8 이후 도입된 useState 함수를 통해 함수형 컴포넌트에서의 state관리가 가능해졌는데 이 useState는 Hooks중 하나이며, 기존 클래스형 컴포넌트의 state 사용법과는 조금 다르다.
+
+```jsx
+// Say.js
+import { useState } from 'react';
+
+const Say = () => {
+  const [message, setMessage] = useState('');
+
+  const onClickEnter = () => setMessage('안녕하세요!');
+  const onClickLeave = () => setMessage('안녕히 가세요!');
+
+  return (
+    <div>
+      <button onClick={onClickEnter}>입장</button>
+      <button onClick={onClickLeave}>퇴장</button>
+      <h1>{message}</h1>
+    </div>
+  );
+};
+
+export default Say;
+```
+
+기존 클래스형 컴포넌트에서 "state 초기값 설정시 객체 형태는 넣어주어야 한다" 라고 배웠지만, 함수형 컴포넌트의 **useState에서는 값의 형태가 자유로울수있다**. useState를 호출하면 **배열이 반환**되고, 이 배열의 <u>첫쨰 원소는 현재상태</u>, <u>두번쨰 원소는 상태변경 함수 혹은 세터함수(setter function)</u> 라고한다.
+
+### 한 컴포넌트에서 useState 여러번 사용하기
+
+```jsx
+import { useState } from 'react';
+
+const Say = () => {
+  const [message, setMessage] = useState('');
+
+  const onClickEnter = () => setMessage('안녕하세요!');
+  const onClickLeave = () => setMessage('안녕히 가세요!');
+
+  const [color, setColor] = useState('black');
+
+  return (
+    <div>
+      <button onClick={onClickEnter}>입장</button>
+      <button onClick={onClickLeave}>퇴장</button>
+      <h1 style={{ color }}>{message}</h1>
+      <button style={{ color: 'red' }} onClick={() => setColor('red')}>
+        빨간색
+      </button>
+      <button style={{ color: 'green' }} onClick={() => setColor('green')}>
+        초록색
+      </button>
+      <button style={{ color: 'blue' }} onClick={() => setColor('blue')}>
+        파란색
+      </button>
+    </div>
+  );
+};
+
+export default Say;
 ```

@@ -685,3 +685,71 @@ const Say = () => {
 
 export default Say;
 ```
+
+위 처럼 useState는 한 컴포넌트에서 여러번 사용할수 있습니다. 기존 HTML 인라인 문법과 다른점은 위 JSX 어트리뷰트중 style 어트리뷰트의 프로퍼티값이 문자열로 전달되고 있으며 onClick 이벤트 핸들러가 카멜케이스로 작성되있습니다. 핵심은 setColor(세터 함수)를 조작해서 color(initialState - 초기 상태)의 값을 변경하는 것이다.
+
+---
+
+## 3.5 state를 사용할때 의 주의사항
+
+클래스형 컴포넌트, 함수형컴포넌트 둘다 state를 사용할때 주의해야한다. 위에서 잠깐 말했듯이 setState 혹은 useState를 통해 전달받은 세터함수를 사용해야한다.
+
+잠시 잘못된 코드를 확인해 보자 ⬇
+
+```jsx
+// class component
+
+this.state.number = this.state.number + 1;
+this.state.array = this.state.array.push(2);
+this.state.object = this.state.value = 5;
+
+// Functional component
+const [object, setObject] = useState({ a: 1, b: 1 });
+object.b = 2;
+```
+
+그렇다면 배열이나 객체를 업데이트 할때는 어떻게 해야할까? 그때는 배열이나, 객체의 사본을 만들어 사본값을 업데이트 후, 업데이트된 사본의 상태를 setState 혹은 세터함수를 통해 업데이트하면된다.
+
+잘못된 코드도 보았으니 사본을 만드는 예시도 보자 ⬇
+
+```jsx
+// 스프레드 연산자와, 객체 디스트럭쳐링을 이용한 객체 다루기
+const object = { a: 1, b: 2, c: 3 };
+const nextObject = { ...object, b: 2 };
+
+// 스프레드 연산자와, 객체 디스트럭쳐링을 이용한 배열 다루기
+const array = [
+  { id: 1, value: true },
+  { id: 2, value: true },
+  { id: 3, value: true },
+];
+let nextArray = array.concat({ id: 4 });
+nextArray.filter((item) => item.id !== 2);
+nextArray.map((item) => (item.id === 1 ? { ...item, value: false } : item));
+```
+
+위처럼 객체에대한 사본을 만들때는 스프레드 연산자를 사용하고 , 배열에 사본을 만들때는 배열고차함수를 활용한다.
+
+---
+
+## 3.6 개념정리
+
+- props는 부모 컴포넌트가 설정한다.
+- state는 컴포넌트 자체적으로 지닌값이므로 컴포넌트 내부에서 값을 업데이트할수 있다.
+
+### 나름의 요약
+
+- import { 가져온것의 이름 } from 가져올경로
+  export default 내보낼 컴포넌트이름 - 하나만 내보내기 가능 - 이름이 자유롭다.
+  export 컴포넌트명 컴포넌트경로 - 여러개 내보내기 가능 - 이름이 일치해야한다.
+- props는 사용자 정의 컴포넌트를 React가 발견하여, 해당컴포넌트로 JSX 어트리뷰트와 자식을 전달하는것, 즉, 해당 컴포넌트에서 매개변수로 props를 받아 사용할수 있다. 하지만 props의 변경은 부모로 부터 가능하며, 읽기전용이다. 즉, 자신의 프롭스를 다룰 때 반드시 순수 함수처럼 동작해야한다.
+- 클래스형 컴포넌트 작성시에는 import { 클래스명 } from 'react' 를 해주어야한다. 또한 props를 전달받을 때 변수안에 담아주는데 이때 디스트럭쳐링 할당을 통해 this.props 를 해주면 간결하게 표현이 가능하다.
+- class 의 extends 키워드는 다른 클래스의 자식으로 만들기위해 사용된다.
+- propTypes를 통해 부모로 부터 전달받을props의 타입을 결정할수있다. 이때 부모요소의 dataType과 일치하지않는다면 오류가 발생한다. propsTypes를 사용할때는 해당파일내 에서 `import PropTpes from 'prop-types'` 를해서 불러와야하며, **propTypes.데이터타입 이런식으로 작성한다. 또한 `propTypes.데이터타입.isRequired`** 처럼 필수 props로 지정할수 있다. 이렇게 isRequired를 지정했을때 부모 컴포넌트에서 props가 전달되지않으면 경고메시지가 출력된다.
+- 클래스형 컴포넌트에서 props를 사용할떄는 this.props로 조회해야한다.
+- 클래스형 컴포넌트에서 constructor로 정의했을경우 반드시 super(props)메서드를 호출해야한다.
+- 클래스형 컴포넌트에서 this.state의 초기값은 객체형식이어야 하며, this.setState를 이용해 state에 새로운값을 넣을수 있다.
+- 클래스형 컴포넌트에서 this.setState를 사용하여 업데이트 할때 이벤트 핸들러내에서 비동기 적으로 동작한다. 이를 해결하려면 this.setState에 함수를 인자로 전달하면된다.
+- 클래스형 컴포넌트에서 this.setState를 사용해서 업데이트된후 어떤작업을 하고싶다면 두번째 파라미터로 콜백함수를 전달하면된다.
+- 함수형 컴포넌트에서 useState 를 사용할때 배열이 반환되며, 첫때 요소는 현재상태(초기상태) 둘쨰요소는 새터함수 라고하며, 새터함수를 조작해 초기상태를 변경해주어야한다.
+- 함수형 컴포넌트에서 useState를 사용할때 배열이나 객체를 업데이트 하고싶다면 스프레드 문법을 이용해 사본을 만들어 업데이트 하자.

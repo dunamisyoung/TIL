@@ -126,11 +126,11 @@ export default EventPractice;
 
 개발자 도구에서 값을 적으면 이벤트 객체가 나타난다. 여기서 나타나는 e 객체는 SyntheticEvent로 웹브라우저의 네이티브 이벤트를 감싸는 객체이다. 사용법은 HTML 이벤트를 다룰때와 동일하며, SyntheticEvent는 네이티브 이벤트와다르게 이벤트가 종료시 초기화되므로 값의 참조가 불가하다. 만약 비동기적으로 이벤트 객체를 참조해야할때는 e.persist() 함수를 호출해야한다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7498534b-a81d-4a41-a911-6ca6f3b77755/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7498534b-a81d-4a41-a911-6ca6f3b77755/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/66991380/103137585-78194100-470d-11eb-88c9-d6b3f149e5a1.png)
 
 하지만 아래는 리액트 원서를 캡쳐해놓은 사진이다. 보면 v17부터는 지원하지 않는다는 이야기가 나온다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5e436a82-2002-4d78-bb9f-d20c56223b1b/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5e436a82-2002-4d78-bb9f-d20c56223b1b/Untitled.png)
+![Untitled2](https://user-images.githubusercontent.com/66991380/103137586-794a6e00-470d-11eb-9c83-db4dbcb53ffb.jpg)
 
 일단은 알아두면 개념의 흐름을 이어나가기에 충분하니 알아두도록하고 자세한 내용은 [합성 이벤트(SyntheticEvent)](https://ko.reactjs.org/docs/events.html#other-events)와 [합성 이벤트와 Event Pooling](https://medium.com/react-native-seoul/react-%EB%A6%AC%EC%95%A1%ED%8A%B8%EB%A5%BC-%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%EB%B0%B0%EC%9B%8C%EB%B3%B4%EC%9E%90-06-%ED%95%A9%EC%84%B1-%EC%9D%B4%EB%B2%A4%ED%8A%B8%EC%99%80-event-pooling-6b4a0801c9b9)을 참고하자.
 
@@ -533,3 +533,16 @@ export default EventPractice;
 ```
 
 이렇게 [computed property names](https://ko.javascript.info/object#ref-172) 을 활용한 input요소 여러개를 관리할수있는 방법을 배웟다.
+
+## 4.4 정리
+
+리액트의 이벤트는 기존 HTML 이벤트 작성법과 비슷하지만 다른 점이있다.
+
+- 이벤트의 이름은 카멜케이스로 작성한다.
+- 이벤트에 실행할 자바스크립트 코드가 아닌 함수를 전달한다.
+- DOM 요소에만 이벤트를 설정할수있다. 즉, **사용자 정의 컴포넌트에서는 이벤트를 자체적으로 설정할수 없으며, 만약 작성시에는 해당컴포넌트에 props로 전달된다.** props를 통해 전달받은 이벤트를 해당 컴포넌트의 DOM에서 사용할수있다.
+- [합성 이벤트(SyntheticEvent)](https://ko.reactjs.org/docs/events.html#other-events) 라는 이벤트를 감싸는 객체가 있으며 이객체는 이벤트 종료시 초기화된다. 만약 비동기적으로 이벤트객체를 참조해야할때는 **e.persis()** 함수를 호출하자.
+- state에 input 값을 전달할때 this.setState로 업데이트하자.
+- 이벤트를 전달하는 함수를 각각 컴포넌트화 시켜 사용하면 가독성에 좋다.
+- Property Initializer Syntax 를 사용해 화살표 함수로 각 이벤트전달 함수를 작성하면 더욱 깔끔하다
+- input 값을 여러개 다룰때는 **e.target.name**을 이용하자. 이때 [computed property names](https://ko.javascript.info/object#ref-172) 문법을 이용하면 많은 양의 input 값을 관리할 수 있다.

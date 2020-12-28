@@ -540,7 +540,9 @@ export default EventPractice;
 
 - 이벤트의 이름은 카멜케이스로 작성한다.
 - 이벤트에 실행할 자바스크립트 코드가 아닌 함수를 전달한다.
-- DOM 요소에만 이벤트를 설정할수있다. 즉, **사용자 정의 컴포넌트에서는 이벤트를 자체적으로 설정할수 없으며, 만약 작성시에는 해당컴포넌트에 props로 전달된다.** props를 통해 전달받은 이벤트를 해당 컴포넌트의 DOM에서 사용할수있다.
+- DOM 요소에만 이벤트를 설정할수있다. 즉, **사용자 정의 컴포넌트에(<MyComponents onClick={}> ← X)서는 이벤트를 자체적으로 바인딩 할수 없으며, 만약 작성시에는 해당컴포넌트에 이벤트 설정한 이벤트이름과 함께 props로 전달된다.** props를 통해 전달받은 이벤트를 해당 컴포넌트의 DOM에서 사용할수있다.
+- useState를 사용할때는, `import {useState} from 'react';`로 가져와준다. useState는 배열을 반환하게 되는데 첫째 배열은 현재상태, 둘째 배열은 상태를 변경하는 함수를 뜻한다. **useState**에 대한 자세한 내용은[useState](https://ko.reactjs.org/docs/hooks-reference.html#usestate)를 참고하자.
+- 여러가지 함수는 컴포넌트 안에서 설정하면된다. 그리고는 render 역할을 하는 root 컴포넌트로 가서 import후에 정의 해주면 된다.
 - [합성 이벤트(SyntheticEvent)](https://ko.reactjs.org/docs/events.html#other-events) 라는 이벤트를 감싸는 객체가 있으며 이객체는 이벤트 종료시 초기화된다. 만약 비동기적으로 이벤트객체를 참조해야할때는 **e.persis()** 함수를 호출하자.
 - state에 input 값을 전달할때 this.setState로 업데이트하자.
 - 이벤트를 전달하는 함수를 각각 컴포넌트화 시켜 사용하면 가독성에 좋다.

@@ -4,12 +4,17 @@
 
 이곳은 오늘하루 배운것들을 정리해놓는 곳입니다 :-)
 
+📚 주요 참조 사이트
+
+- **JS** - PoiemaWeb (모던 자바스크립트 DEEP DIVE)
+- **React** - Velopert (리액트를 다루는 기술)
+
 **`👨‍💻자신을 다른이와 비교하지말고 꾸준히 배워나가는 개발자로 성장하자 :)`**
 
 > ### VailinaJS
 
 <details>
-<summary>VailinaJS</summary>
+<summary>PoiemaWeb</summary>
 <div markdown="1">
 
 - #### [🎈4.변수 Part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter04.md)

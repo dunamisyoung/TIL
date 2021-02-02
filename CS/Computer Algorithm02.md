@@ -1,0 +1,81 @@
+# 컴퓨터 알고리즘 개요 (2) - T아카데미
+
+---
+
+## 컴퓨터 알고리즘을 설명하기 위한 4단계
+
+- **문제정의**
+  컴퓨터를 이용해 어떤 문제를 풀것인가?
+  어떤 자료를 입력으로 넣고, 어떤자료를 출력으로 받을것인가?
+- **알고리즘 설명**
+  컴퓨터를 이용해 단계적으로 설명한다.
+- **정확성 증명**
+  알고리즘을 통해 항상 같은 답을 출력하는가?
+- **성능 분석**
+  어떻게 하면 좀더 효율적으로 문제를 해결할것인가?
+- 시간적, 비용적 측면을 고려한다.
+
+### 컴퓨터 알고리즘의 수행시간 분석
+
+- 특정 기계에서 수행시간을 측정하는 것은 공정하지 않다.
+- **수행 연산의 횟수를 비교하는 방식으로 성능을 분석**한다.
+- 수행시간은 입력으로 크기가 커지면 커질수록 시간이 많이 걸린다.
+- 따라서 수행 시간은 입력 크기에 n에 대한 함수로 표현한다. T(n)
+
+**성능 분석의 비교 대상**
+
+- 산술 연산 ( Add, Multyply, Exponent, Modular ··· )
+- 데이터 입출력 ( Copy, Move, Save, Load, ··· )
+- 제어 연산 ( If, While, Register, ··· )
+
+### 점근적 표기법(Asymptotic notation)
+
+성능분석을 명확하게 표기하기 위한 표기법 - 알고리즘의 수행시간
+
+아래 그림에서의 Y축은 시간을 뜻하며 그래프는 값을 뜻한다.
+
+- \*\*Ο-notation (빅오 표기)
+- n₀보다 오른쪽에 있는 모든 n에 대해 f(n)의 값은 cg(n)과 같거나 아래쪽에 있다.\*\*
+- g(n) 을 함수 f(n)의 점근적 상한선 이라고 한다.
+  f(n) 이라는 함수는 n 값에 의해 다양하게 변화한다.
+  하지만 아무리 값이 커져도 cg(n) 값보다 커지지 못한다.
+
+주어진 함수가 기준이 되는 함수보다 위쪽에 있는가? 아래쪽에 있는가?
+아래쪽에 위치한다면 (Big - O) 이며 더 위로 올라갈수 없다는 뜻으로
+(asymptotic upper bound) 라고 한다.
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b555f522-87c8-4482-83f1-4966e6ba444e/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b555f522-87c8-4482-83f1-4966e6ba444e/Untitled.png)
+
+- **Ω-notation (오메가 표기)**
+- **n₀보다 오른쪽에 있는 모든 n에 대해 f(n)의 값은 cg(n)과 같거나 위쪽에 있다. -** g(n) 을 함수 f(n)의 점근적 하한선 이라고 한다.
+  f(n) 이라는 함수가 아무리 빨라진다고 하더라도 cg(n) 보다는 느리다.
+
+주어진 함수가 기준이 되는 함수보다 위쪽에 위치한다면 (OMEGA) 이며 더 아래로 갈수없다는 뜻으로 (asymtotic lower bound) 라고 한다.
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/05b7c327-0f14-4c07-9574-0549c76056b2/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/05b7c327-0f14-4c07-9574-0549c76056b2/Untitled.png)
+
+- θ-notation (쎄타 표기)
+- **n₀보다 오른쪽에 있는 모든 n에 대해 f(n)의 값은 cg(n)과 같거나 위쪽에 있고 c₂g(n)과 같거나 아래쪽에 있다. -** g(n) 을 함수 f(n)의 점근적 상한 및 하한선 이라고 한다.
+  f(n) 이라는 함수가 아무리 빨라도 c₁g(n) 보다 느리고 아무리 느려도 c₂g(n) 보다는 빠르다.
+
+      주어진 함수가 기준이 되는 함수 사이에 위치한다면 (θ) 이며 두 함수 사이에 위치한다 의미로 (asymptotically tight bound) 이라고 한다.
+
+      ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5d19c916-14e4-43a5-8592-32981f9ac844/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5d19c916-14e4-43a5-8592-32981f9ac844/Untitled.png)
+
+**컴퓨터 알고리즘 4단계**
+
+- 문재해결
+- 알고리즘 설명
+- 정확성 증명
+- 성능 분석으로 이루어진다.
+
+**컴퓨터 알고리즘의 성능 분석**
+
+컴퓨터 알고리즘의 성능분석은 공정하고 공평한 비교를 위해 **점근적 표기법에 의해 기술**한다.
+
+- **O - notation**
+  (Asymptotic upper bound) 주어진 함수보다 항상 위쪽에 존재 하여 아무리 함수가 느려져도 주어진 기준함수보다는 항상 빠르다.
+- **Ω - notation**
+  (Asymtotic lower bound) 주어진 함수보다 항상 아래쪽에 존재하여 아무리 함수가 빨라져도 주어진 기준 함수보다는 항상 느리다.
+- **θ - notation**
+  (Asymptotically tight bound) **O - notation** 과 **Ω - notation**의 교집합으로 주어진 함수보다 사이에 존재하여 항상 주어진 기준 함수보다는 사이에 위치한다.

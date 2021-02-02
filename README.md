@@ -11,11 +11,27 @@
 
 **`👨‍💻자신을 다른이와 비교하지말고 꾸준히 배워나가는 개발자로 성장하자 :)`**
 
+> ### Computer Science
+
+<details>
+<summary>CS</summary>
+<div markdown="1">
+
+- #### [💻 OperatingSystem&Network](https://github.com/dunamisyoung/TIL/blob/master/CS/OperatingSystem%26Network.md)
+
+- #### [🧬 컴퓨터 알고리즘 개요 - 01](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm01.md)
+
+- #### [🧬 컴퓨터 알고리즘 개요 - 02](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm02.md)
+
+</details>
+
+---
+
 > ### VailinaJS
 
 <details>
 <summary>PoiemaWeb</summary>
-<div markdown="1">
+<div markdown="2">
 
 - #### [🎈4.변수 Part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter04.md)
 
@@ -66,7 +82,7 @@
 
 <details>
 <summary>React</summary>
-<div markdown="2">
+<div markdown="3">
 
 - #### [🎨01. JSX소개 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/Ref/part01.md)
 

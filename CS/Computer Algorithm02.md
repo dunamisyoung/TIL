@@ -34,8 +34,8 @@
 
 아래 그림에서의 Y축은 시간을 뜻하며 그래프는 값을 뜻한다.
 
-- \*\*Ο-notation (빅오 표기)
-- n₀보다 오른쪽에 있는 모든 n에 대해 f(n)의 값은 cg(n)과 같거나 아래쪽에 있다.\*\*
+- **Ο-notation (빅오 표기)**
+- **n₀보다 오른쪽에 있는 모든 n에 대해 f(n)의 값은 cg(n)과 같거나 아래쪽에 있다.**
 - g(n) 을 함수 f(n)의 점근적 상한선 이라고 한다.
   f(n) 이라는 함수는 n 값에 의해 다양하게 변화한다.
   하지만 아무리 값이 커져도 cg(n) 값보다 커지지 못한다.
@@ -44,7 +44,7 @@
 아래쪽에 위치한다면 (Big - O) 이며 더 위로 올라갈수 없다는 뜻으로
 (asymptotic upper bound) 라고 한다.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b555f522-87c8-4482-83f1-4966e6ba444e/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b555f522-87c8-4482-83f1-4966e6ba444e/Untitled.png)
+![Ο-notation](https://user-images.githubusercontent.com/66991380/106587588-25913700-658d-11eb-8c18-6768e18d3160.jpg)
 
 - **Ω-notation (오메가 표기)**
 - **n₀보다 오른쪽에 있는 모든 n에 대해 f(n)의 값은 cg(n)과 같거나 위쪽에 있다. -** g(n) 을 함수 f(n)의 점근적 하한선 이라고 한다.
@@ -52,15 +52,15 @@
 
 주어진 함수가 기준이 되는 함수보다 위쪽에 위치한다면 (OMEGA) 이며 더 아래로 갈수없다는 뜻으로 (asymtotic lower bound) 라고 한다.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/05b7c327-0f14-4c07-9574-0549c76056b2/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/05b7c327-0f14-4c07-9574-0549c76056b2/Untitled.png)
+![Ω-notation](https://user-images.githubusercontent.com/66991380/106587583-24f8a080-658d-11eb-866b-2d8a13faaaf2.jpg)
 
-- θ-notation (쎄타 표기)
+- **θ-notation (쎄타 표기)**
 - **n₀보다 오른쪽에 있는 모든 n에 대해 f(n)의 값은 cg(n)과 같거나 위쪽에 있고 c₂g(n)과 같거나 아래쪽에 있다. -** g(n) 을 함수 f(n)의 점근적 상한 및 하한선 이라고 한다.
   f(n) 이라는 함수가 아무리 빨라도 c₁g(n) 보다 느리고 아무리 느려도 c₂g(n) 보다는 빠르다.
 
-      주어진 함수가 기준이 되는 함수 사이에 위치한다면 (θ) 이며 두 함수 사이에 위치한다 의미로 (asymptotically tight bound) 이라고 한다.
+  주어진 함수가 기준이 되는 함수 사이에 위치한다면 (θ) 이며 두 함수 사이에 위치한다 의미로 (asymptotically tight bound) 이라고 한다.
 
-      ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5d19c916-14e4-43a5-8592-32981f9ac844/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5d19c916-14e4-43a5-8592-32981f9ac844/Untitled.png)
+![θ-notation](https://user-images.githubusercontent.com/66991380/106587591-2629cd80-658d-11eb-881b-0a5836f8cd76.jpg)
 
 **컴퓨터 알고리즘 4단계**
 

@@ -19,6 +19,8 @@
 
 - #### [💻 OperatingSystem&Network](https://github.com/dunamisyoung/TIL/blob/master/CS/OperatingSystem%26Network.md)
 
+- #### [💻 Scheduler&Process](https://github.com/dunamisyoung/TIL/blob/master/CS/Scheduler%26Process.md)
+
 - #### [🧬 컴퓨터 알고리즘 개요 - 01](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm01.md)
 
 - #### [🧬 컴퓨터 알고리즘 개요 - 02](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm02.md)

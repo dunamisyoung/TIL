@@ -61,10 +61,6 @@
 
 `프로세스 생성(new Q) -> 실행가능(ready Q) -> 실행 중(running Q) -> 대기(blocked Q) -> 종료(exit Q)`
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/11fde25f-81f9-407f-afd4-1c05f024d07e/processState.jpg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/11fde25f-81f9-407f-afd4-1c05f024d07e/processState.jpg)
-
-_이미지 출처 - 잔재미 코딩_
-
 프로세스 실행시 바로 readyQ로 들어간다고 해도 무방하다.
 
 Q에서 pop된 아이를 CPU에 전달후 실행후 다시또
@@ -81,10 +77,6 @@ Ready Q에 아무것도 없다면, CPU는 놀고있다.
 
 - 스케쥴러가 이벤트 루프 같은거다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/38046de8-4306-4f50-b7d8-7146c63e85e4/processAlgorithm.jpg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/38046de8-4306-4f50-b7d8-7146c63e85e4/processAlgorithm.jpg)
-
-_이미지 출처 - 잔재미 코딩_
-
 프로그램 성능을 높이고 싶을때 알아두면 좋을 팁
 
 - [IO-bound : IO](https://jhnyang.tistory.com/25) 관련 기능이 주로 사용하는 프로그램 - 데이터베이스 같은것이다.
@@ -99,10 +91,6 @@ _이미지 출처 - 잔재미 코딩_
 ### 프로세스
 
 **프로세스 구조**
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/44e280db-adc0-41c0-97dd-50f4eb0f04aa/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/44e280db-adc0-41c0-97dd-50f4eb0f04aa/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
 
 프로세스는 일반적으로 어떻게 구성되어있을까?
 
@@ -126,10 +114,6 @@ CPU는 최상단 주소에서 1씩 증가 시키면서 프로그램을 실�
 변수도 스택에 하나씩 담긴다.
 
 코드 실행이 끝나면 리턴위치까지 스택 값을 비워준다.(POP)
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/18f01571-327d-4cdd-8be2-1015ac2b9b0d/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/18f01571-327d-4cdd-8be2-1015ac2b9b0d/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
 
 결국 프로그램은 프로세스다.
 
@@ -155,10 +139,6 @@ CPU가 어딘가의 공간에 PC와 SP 값을 저장해놓는다.
 
 **PCB (process Control Block)**
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/61d15468-b6a8-4b3e-a20f-7b8beb160cf6/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/61d15468-b6a8-4b3e-a20f-7b8beb160cf6/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
-
 - PCB에 다음 프로세스 정보 저장
 
 프로세스 ID, 레지스터 (pc, sp 등) 등
@@ -169,15 +149,9 @@ _이미지 출처 - 잔재미 코딩_
 
 컨텍스트 스위칭은 10ms마다 프로세스를 바꿔가며실행
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fcd6bb81-b394-4c4b-9a00-30771bda92a9/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fcd6bb81-b394-4c4b-9a00-30771bda92a9/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
-
 1. 실행 중지할 프로세스 정보를 해당 프로세스의 PCB에 업데이트 해서 메인 메모리에 저장.
 
 2. 다음 실행할 프로세스 정보를 메인 메모리에 있는 해당 PCB 정보(PC, SP)를 CPU의 레지스터에 넣고 실행
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/66524b0a-b95c-40c6-a01b-80e85a9519c8/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/66524b0a-b95c-40c6-a01b-80e85a9519c8/Untitled.png)
 
 이미지 출처 - 잔재미 코딩
 
@@ -200,10 +174,6 @@ _이미지 출처 - 잔재미 코딩_
 CPU 입장에서 OS를 통해 바라보는 프로세스의 주소는 각각의 프로세스 마다 동일하다.
 
 즉, 모든 프로세스가 번지수가 같다.
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7dad3e31-7a57-48f3-bb23-1154c44115fa/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7dad3e31-7a57-48f3-bb23-1154c44115fa/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
 
 프로세스가 두개라고 가정했을때 A프로세스가 B프로세스에 접근할수 있는 방법은 아예없다.
 
@@ -241,10 +211,6 @@ IPC 기법은 프로세스간 통신 방법을 제공한다.
 
 운영체제는 하나의 프로세스 처럼 동작한다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b4ff7a72-3a22-4a3d-8071-3382e395c564/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b4ff7a72-3a22-4a3d-8071-3382e395c564/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
-
 커널모드로 들어갔을때만 접근할수있는 공간이 있으며, 우리가 입력한 것에 따라서 공간을 확보하여 데이터를 쓰고 읽을수 있다.
 
 프로세스 A와 프로세스 B는 커널 공간을 서로 공유한다.
@@ -269,10 +235,6 @@ file을 사용하면 실시간으로 직접 원하는 프로세스에 데�
 공유메모리는 어떤 함수를 호출하면 그 함수는 특별히 시스템 콜로 호출이되어 커널공간의로써의 접근이 가능하게되는것.
 
 즉, kernel space에 메모리 공간을 만들고 해당 공간을 변수처럼 사용하게 된다.
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4704f343-e693-4a95-a936-57860726388d/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4704f343-e693-4a95-a936-57860726388d/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
 
 ### ✨**정리**
 
@@ -299,10 +261,6 @@ heap도 제한된 공간이다.
 
 한장의 그림으로 정리 해보기
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6e4f8a9d-66dc-456f-b81d-f726a9e6ee1d/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6e4f8a9d-66dc-456f-b81d-f726a9e6ee1d/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
-
 ### **Thread (스레드)**
 
 Light weiht Process 라고도 함
@@ -313,10 +271,6 @@ Light weiht Process 라고도 함
 - 하나의 프로세스 안에서 스레드 여러개를 생성할수 있고, 각각의 스레드들이 병렬로 실행할수있다. ( 동일한 역할을 하는 프로세스가 여러개이다 라고 생각하자)
 - 프로세스 안에 있으므로 프로세스의 데이터를 모두 접근 가능
 - 스레드는 함수다 - 스레스 함수를 통해 스레드를 만들수있다.
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/349809d3-98e2-4caf-a261-38191694e3aa/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/349809d3-98e2-4caf-a261-38191694e3aa/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
 
 함수는 스택에서 실행된다.
 
@@ -332,10 +286,6 @@ CODE랑 DATA랑 HEAP은 부모프로세스 공간에 접근할수있기에 �
 
 프로세스 병렬 처리를 위해 사용한다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0bb91799-d177-42d2-859a-082ec189cfe0/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0bb91799-d177-42d2-859a-082ec189cfe0/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
-
 **멀티 프로세싱이란?**
 
 하나의 프로세스중 각각의 기능들을 분리하여 분리한 기능을 CPU나 코어에 별도로 할당해서 병렬로 실행하게끔 하여 처리속도를 높이는 스케쥴링기법이다.
@@ -348,17 +298,9 @@ _이미지 출처 - 잔재미 코딩_
 
 **멀티 프로세스와 멀티 태스킹**
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e1249981-ec6f-4905-b5a7-6eb11628fc7d/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e1249981-ec6f-4905-b5a7-6eb11628fc7d/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
-
 **thread 장점1**
 
 사용자에 대한 응답성을 향상한다.
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/96ccf745-08b4-4591-b725-82f0e7da8b09/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/96ccf745-08b4-4591-b725-82f0e7da8b09/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
 
 - IO 처리
 - 사용자 통신 등등
@@ -373,10 +315,6 @@ _이미지 출처 - 잔재미 코딩_
 
 IPC 기법을 사용하지 않기에 자원 공유를 위해 번거로운 작업이 필요없다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/57e95106-5639-47df-89bf-5b77bf084712/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/57e95106-5639-47df-89bf-5b77bf084712/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
-
 **thread 장점 3**
 
 작업이 분리되어 코드가 간결
@@ -384,10 +322,6 @@ _이미지 출처 - 잔재미 코딩_
 - 작성 나름
 
 **thread 단점**
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dc681b4b-ccba-42d7-bcdc-10e6cc4587da/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dc681b4b-ccba-42d7-bcdc-10e6cc4587da/Untitled.png)
-
-_이미지 출처 - 잔재미 코딩_
 
 하나의 기능을 하나의 프로세스로 만들지 않고 멀티 프로세스로 만든다면?
 

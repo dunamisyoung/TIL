@@ -21,13 +21,15 @@
 
 - #### [💻 Scheduler&Process](https://github.com/dunamisyoung/TIL/blob/master/CS/Scheduler%26Process.md)
 
-- #### [🧬 컴퓨터 알고리즘 개요 - 01](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm01.md)
+- #### [🧬 컴퓨터 알고리즘 개요 - 01 알고리즘의 4단계](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm01.md)
 
-- #### [🧬 컴퓨터 알고리즘 개요 - 02](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm02.md)
+- #### [🧬 컴퓨터 알고리즘 개요 - 02 점근표기법](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm02.md)
 
-- #### [🧬 컴퓨터 알고리즘 개요 - 03](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm03.md)
+- #### [🧬 컴퓨터 알고리즘 개요 - 03 정렬](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm03.md)
 
 - #### [🧬 컴퓨터 알고리즘 기초 - 04 삽입정렬](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm04.md)
+
+- #### [🧬 컴퓨터 알고리즘 기초 - 05 합병정렬](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm05.md)
 
 - #### [🎫 CS50 - 01 이진법](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Science01.md)
 

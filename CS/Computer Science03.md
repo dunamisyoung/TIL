@@ -34,5 +34,4 @@
 
 ### 1. 컴퓨팅 사고 단원을 마치며 quiz :
 
-![50](https://user-images.githubusercontent.com/66991380/108366538-d5c49800-723b-11eb-8595-9c57d186febf.jpg)
 ![quiz01](https://user-images.githubusercontent.com/66991380/108366564-de1cd300-723b-11eb-8759-04cf9c0bffbe.jpg)

@@ -29,6 +29,11 @@
 
 - #### [🧬 컴퓨터 알고리즘 기초 - 04 삽입정렬](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm04.md)
 
+- #### [🎫 CS50 - 01 이진법](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm01.md)
+
+- #### [🎫 CS50 - 02 정보의 표현](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm02.md)
+
+- #### [🎫 CS50 - 03 알고리즘](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm03.md)
 </details>
 
 ---

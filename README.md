@@ -31,6 +31,10 @@
 
 - #### [🧬 컴퓨터 알고리즘 기초 - 05 합병정렬](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm05.md)
 
+- #### [🧬 컴퓨터 알고리즘 기초 - 06 힙정렬(1)](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm06.md)
+
+- #### [🧬 컴퓨터 알고리즘 기초 - 07 힙정렬(2)](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm07.md)
+
 - #### [🎫 CS50 - 01 이진법](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Science01.md)
 
 - #### [🎫 CS50 - 02 정보의 표현](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Science02.md)

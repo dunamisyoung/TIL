@@ -95,11 +95,22 @@
 
 ---
 
+> ### TypeScript
+
+<details>
+<summary>Typescript & React With Velopert</summary>
+<div markdown="3">
+</details>
+
+- #### [📌01. 타입스크립트 - 환경설정, 기본타입, 함수](https://github.com/dunamisyoung/TIL/blob/master/Typescript/Modern%20Typescript&React/TypescriptWithVelopert01.md)
+
+---
+
 > ### React
 
 <details>
 <summary>React</summary>
-<div markdown="3">
+<div markdown="4">
 
 - #### [🎨01. JSX소개 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/Ref/part01.md)
 
@@ -109,7 +120,7 @@
 
 <details>
 <summary>Modern React With Velopert</summary>
-<div markdown="3">
+<div markdown="5">
 
 - #### [🎨01. 리액트는 어쩌다가 만들어졌을까](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert01.md)
 

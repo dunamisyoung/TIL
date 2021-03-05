@@ -100,9 +100,10 @@
 <details>
 <summary>Typescript & React With Velopert</summary>
 <div markdown="3">
-</details>
 
 - #### [📌01. 타입스크립트 - 환경설정, 기본타입, 함수](https://github.com/dunamisyoung/TIL/blob/master/Typescript/Modern%20Typescript&React/TypescriptWithVelopert01.md)
+
+</details>
 
 ---
 

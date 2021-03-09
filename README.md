@@ -37,7 +37,7 @@
 
 - #### [🧬 컴퓨터 알고리즘 기초 - 08 퀵정렬](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm08.md)
 
-- #### [🧬 컴퓨터 알고리즘 기초 - 09 선형시간 정렬](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm08.md)
+- #### [🧬 컴퓨터 알고리즘 기초 - 09 선형시간 정렬](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Algorithm09.md)
 
 - #### [🎫 CS50 - 01 이진법](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Science01.md)
 
@@ -159,4 +159,16 @@
 </details>
 
 </div>
+</details>
+
+---
+
+> ### Algoritm
+
+<details>
+<summary>Quiz</summary>
+<div markdown="6">
+
+- #### [🔬01. K번째수](https://github.com/dunamisyoung/TIL/blob/master/Algorithm/playground08.md)
+
 </details>

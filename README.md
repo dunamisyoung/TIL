@@ -46,6 +46,8 @@
 - #### [🎫 CS50 - 02 정보의 표현](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Science02.md)
 
 - #### [🎫 CS50 - 03 알고리즘](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Science03.md)
+
+- #### [🎫 CS50 - 04 C언어 기초](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Science04.md)
 </details>
 
 ---
@@ -168,7 +170,7 @@
 > ### Algoritm
 
 <details>
-<summary>Quiz</summary>
+<summary>Programmers</summary>
 <div markdown="6">
 
 - #### [🔬01. K번째수](https://github.com/dunamisyoung/TIL/blob/master/Algorithm/playground08.md)

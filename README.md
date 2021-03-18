@@ -13,9 +13,7 @@
 
 > ### Computer Science
 
-<details>
-<summary>CS</summary>
-<div markdown="1">
+**<summary>CS</summary>**
 
 - #### [💻 Cookie&Session&WebStorage](https://github.com/dunamisyoung/TIL/blob/master/CS/Cookie%2CStorage%2CSession.md)
 
@@ -48,15 +46,12 @@
 - #### [🎫 CS50 - 03 알고리즘](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Science03.md)
 
 - #### [🎫 CS50 - 04 C언어 기초](https://github.com/dunamisyoung/TIL/blob/master/CS/Computer%20Science04.md)
-</details>
 
 ---
 
 > ### VailinaJS
 
-<details>
-<summary>PoiemaWeb</summary>
-<div markdown="2">
+**<summary>PoiemaWeb</summary>**
 
 - #### [🎈4.변수 Part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter04.md)
 
@@ -98,30 +93,21 @@
 
 - #### [🎈36. 디스트럭처링할당 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/ValinaJs/chapter36.md)
 
-</div>
-</details>
-
 ---
 
 > ### TypeScript
 
-<details>
-<summary>Typescript & React With Velopert</summary>
-<div markdown="3">
+**<summary>Typescript & React With Velopert</summary>**
 
 - #### [📌01. 환경설정, 기본타입, 함수](https://github.com/dunamisyoung/TIL/blob/master/Typescript/Modern%20Typescript&React/TypescriptWithVelopert01.md)
 
 - #### [📌02. Interface, Type Alias](https://github.com/dunamisyoung/TIL/blob/master/Typescript/Modern%20Typescript&React/TypescriptWithVelopert02.md)
 
-</details>
-
 ---
 
 > ### React
 
-<details>
-<summary>React</summary>
-<div markdown="4">
+**<summary>React</summary>**
 
 - #### [🎨01. JSX소개 part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/Ref/part01.md)
 
@@ -129,9 +115,7 @@
 
 - #### [🎨03. Components and Props part arrangement](https://github.com/dunamisyoung/TIL/blob/master/React/Ref/part03.md)
 
-<details>
-<summary>Modern React With Velopert</summary>
-<div markdown="5">
+**<summary>Modern React With Velopert</summary>**
 
 - #### [🎨01. 리액트는 어쩌다가 만들어졌을까](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert01.md)
 
@@ -159,20 +143,18 @@
 
 - #### [🎨13. 배열에 항목 수정하기](https://github.com/dunamisyoung/TIL/blob/master/React/Modern%20React%20With%20Velopert/Modern%20React%20With%20Velopert13.md)
 
-</div>
-</details>
-
-</div>
-</details>
-
 ---
 
 > ### Algoritm
 
-<details>
-<summary>Programmers</summary>
-<div markdown="6">
+**<summary>Programmers</summary>**
 
 - #### [🔬01. K번째수](https://github.com/dunamisyoung/TIL/blob/master/Algorithm/playground08.md)
 
-</details>
+---
+
+> ### Technical Terms
+
+**<summary>💻 우리가 개발공부를 하며 한번쯤은 들어봤을 용어 :)</summary>**
+
+- ####

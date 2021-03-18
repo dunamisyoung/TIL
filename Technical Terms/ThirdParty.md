@@ -20,3 +20,6 @@
 프로그래밍에서의 서드 파티라는 것은 편한 개발을위해 `플러그인` 이나 `library` 혹은 `프레임워크`를 사용하는데 **이처럼 제 3자로써 중간다리 역할을 하는 것을 서드파티라고 한다. 또한 이런것들을 만드는 개발자가 서드 파티 개발자다.**
 
 즉, 제 3자가 만든 라이브러리로써 개인 개발자나 프로젝트 팀, 혹은 업체등에서 개발하는 라이브러리를 뜻하기도한다. 또한 프로그래밍 개발과 개발자 사이에 플러그인, 라이브러리 프레임 워크를 서드 파티로 볼수있다.
+
+[참조 : 위키백과](https://ko.wikipedia.org/wiki/%EC%84%9C%EB%93%9C_%ED%8C%8C%ED%8B%B0_%EA%B0%9C%EB%B0%9C%EC%9E%90)
+[참조 : gyoogle](<https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Software%20Engineering/%EC%8D%A8%EB%93%9C%ED%8C%8C%ED%8B%B0(3rd%20party)%EB%9E%80.md>)

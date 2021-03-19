@@ -161,4 +161,6 @@
 
 **<summary>📖 우리가 개발공부를 하며 한번쯤은 들어봤을 용어 :)</summary>**
 
-- #### [ Third Party](https://github.com/dunamisyoung/TIL/blob/master/Technical%20Terms/ThirdParty.md)
+- #### [ Third Party ](https://github.com/dunamisyoung/TIL/blob/master/Technical%20Terms/ThirdParty.md)
+
+- #### [ MVC ](https://github.com/dunamisyoung/TIL/blob/master/Technical%20Terms/MVC.md)

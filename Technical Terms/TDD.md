@@ -24,7 +24,7 @@ TDD에 대해 좀더 쉽게 접근해본다면 **"테스트 주도 개발(Text-D
 
 아래의 그림을 통해 쉽게 이해해보자
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8eb4a89b-f6b9-46c8-adfa-23cccacef30f/KakaoTalk_20210320_230825173.jpg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8eb4a89b-f6b9-46c8-adfa-23cccacef30f/KakaoTalk_20210320_230825173.jpg)
+![KakaoTalk_20210320_230825173](https://user-images.githubusercontent.com/66991380/111874060-c40b1780-89d6-11eb-8cca-0e657d1bf46e.jpg)
 
 이와같이 기존 개발 프로세스와 차이점을 알수있다.
 
@@ -58,3 +58,5 @@ TDD에 대해 좀더 쉽게 접근해본다면 **"테스트 주도 개발(Text-D
 TDD를 사용하며 개별 테스트를 일일히 진행하며 완성시키다보니 개발 시간이 늦어지는 단점이 보일수 있겠지만, 전체적인 개발시간은 비슷하거나 단축되는 효과가 있게된다. 이후 코드 수정 및 구조추가의 용의성을 생각했을때 TDD를 적용한 개발방법이 많은 도움이 될수있다.
 
 - [TDD(Test-driven Development) 소개](https://m.blog.naver.com/suresofttech/221569611618)
+
+- [추가적으로 읽어보면 좋은글 - [TDD] TDD의 장단점에 대해 생각해보기..](https://medium.com/@jang.wangsu/tdd-tdd%EC%9D%98-%EC%9E%A5%EB%8B%A8%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%83%9D%EA%B0%81%ED%95%B4%EB%B3%B4%EA%B8%B0-dcf32a72b098)

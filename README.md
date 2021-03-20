@@ -4,12 +4,29 @@
 
 이곳은 오늘하루 배운것들을 정리해놓는 곳입니다 :-)
 
-📚 주요 참조 사이트
+🔍 주요 참조 사이트
 
 - **JS** - PoiemaWeb (모던 자바스크립트 DEEP DIVE)
 - **React** - Velopert (리액트를 다루는 기술)
 
 **`👨‍💻자신을 다른이와 비교하지말고 꾸준히 배워나가는 개발자로 성장하자 :)`**
+
+<details>
+<summary>📚 Table of Contents</summary>
+
+- [💻 CS](https://github.com/dunamisyoung/TIL#computer-science)
+
+- [🎈 Javascript](https://github.com/dunamisyoung/TIL#vailinajs)
+
+- [📌 Typescript](https://github.com/dunamisyoung/TIL#typescript)
+
+- [🎨 React](https://github.com/dunamisyoung/TIL#react)
+
+- [🔬 CodingTest](https://github.com/dunamisyoung/TIL#algoritm)
+
+- [📖 Technical Terms](https://github.com/dunamisyoung/TIL#technical-terms)
+
+</details>
 
 > ### Computer Science
 

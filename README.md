@@ -2,7 +2,7 @@
 
 **Today I Learn**
 
-이곳은 오늘하루 배운것들을 정리해놓는 곳입니다 :-)
+### 이곳은 오늘하루 배운것들을 정리해놓는 곳입니다 :-)
 
 🔍 주요 참조 사이트
 
@@ -12,7 +12,7 @@
 **`👨‍💻자신을 다른이와 비교하지말고 꾸준히 배워나가는 개발자로 성장하자 :)`**
 
 <details>
-<summary>📚 Table of Contents</summary>
+<summary>📚 Table of Contents 📚</summary>
 
 - [💻 CS](https://github.com/dunamisyoung/TIL#computer-science)
 
@@ -27,6 +27,8 @@
 - [📖 Technical Terms](https://github.com/dunamisyoung/TIL#technical-terms)
 
 </details>
+
+#
 
 > ### Computer Science
 
@@ -183,3 +185,5 @@
 - #### [ MVC ](https://github.com/dunamisyoung/TIL/blob/master/Technical%20Terms/MVC.md)
 
 - #### [ TDD ](https://github.com/dunamisyoung/TIL/blob/master/Technical%20Terms/TDD.md)
+
+- #### [ Shell ](https://github.com/dunamisyoung/TIL/blob/master/Technical%20Terms/shell.md)

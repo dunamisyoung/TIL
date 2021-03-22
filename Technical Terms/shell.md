@@ -26,4 +26,7 @@ bash 셸dms sh를 기반으로 Korn Shell(ksh)과 C Shell(csh)의 좋은 점만 
 추가적인 사항은 아래의 링크로 확인해보자 😉
 
 - [[리눅스]셸(Shell)이란?](https://jhnyang.tistory.com/57)
+
 - [shell, bash, zbash의 간단 개념정리](https://ithub.tistory.com/205)
+
+- [Bash입문자를 위한 핵심 요약 정리](https://blog.gaerae.com/2015/01/bash-hello-world.html?m=1)

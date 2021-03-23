@@ -187,3 +187,5 @@
 - #### [ TDD ](https://github.com/dunamisyoung/TIL/blob/master/Technical%20Terms/TDD.md)
 
 - #### [ Shell ](https://github.com/dunamisyoung/TIL/blob/master/Technical%20Terms/shell.md)
+
+- #### [ Ubuntu / Linux ](https://github.com/dunamisyoung/TIL/blob/master/Technical%20Terms/Ubuntu,Linux.md)

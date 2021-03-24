@@ -1,4 +1,4 @@
-#
+# API란?
 
 ---
 
@@ -55,4 +55,7 @@ API도 같은 맥락으로 UI가 사용자와 사용자가 다룰 대상(하드�
 참고
 
 - [api란?](https://dydrlaks.medium.com/api-%EB%9E%80-c0fd6222d34c)
+
 - [API란? 비개발자가 알기 쉽게 설명해드립니다!](http://blog.wishket.com/api%EB%9E%80-%EC%89%BD%EA%B2%8C-%EC%84%A4%EB%AA%85-%EA%B7%B8%EB%A6%B0%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8/)
+
+- [읽어보면 좋은글](https://www.redhat.com/ko/topics/api/what-are-application-programming-interfaces)

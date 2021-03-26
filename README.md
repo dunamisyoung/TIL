@@ -191,3 +191,5 @@
 - #### [ Ubuntu / Linux ](https://github.com/dunamisyoung/TIL/blob/master/Technical%20Terms/Ubuntu,Linux.md)
 
 - #### [ API ](https://github.com/dunamisyoung/TIL/blob/master/Technical%20Terms/API.md)
+
+- #### [ Technical Debt ](https://github.com/dunamisyoung/TIL/blob/master/Technical%20Terms/Technical%20Debt.md)
